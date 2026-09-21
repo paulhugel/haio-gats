@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:haio-gats:draft:schema:canonical-event:0.1",
+  "title": "HAIO-GATS draft canonical event",
+  "description": "Non-normative candidate encoding of the HAIO-GATS v0.1.0 minimum event record. Conformance is determined by the specification, not by schema validation alone.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "operation_id",
+    "event_type",
+    "recorded_at",
+    "clock_source",
+    "actor_id",
+    "actor_type",
+    "role",
+    "human_supervisor_id",
+    "authority_grant_id",
+    "policy_id",
+    "policy_version",
+    "action",
+    "resource_scope",
+    "input_refs",
+    "output_refs",
+    "decision",
+    "decision_basis",
+    "truth_status",
+    "prior_event_id",
+    "verifier_id",
+    "supersedes_event_id",
+    "statement_id",
+    "receipt_ref",
+    "confidentiality",
+    "retention"
+  ],
+  "$defs": {
+    "marker": {
+      "type": "string",
+      "enum": ["unknown", "not_applicable"]
+    },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "identifierOrMarker": {
+      "oneOf": [
+        { "$ref": "#/$defs/identifier" },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref_id", "media_type", "digest"],
+      "properties": {
+        "ref_id": { "$ref": "#/$defs/identifier" },
+        "media_type": { "type": "string", "minLength": 1 },
+        "digest": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["algorithm", "value"],
+              "properties": {
+                "algorithm": { "type": "string", "enum": ["sha-256"] },
+                "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+              }
+            },
+            { "$ref": "#/$defs/marker" }
+          ]
+        },
+        "locator": { "type": "string", "minLength": 1 },
+        "confidentiality": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "haio-gats.canonical-event/draft-0.1" },
+    "event_id": { "$ref": "#/$defs/identifier" },
+    "operation_id": { "$ref": "#/$defs/identifier" },
+    "event_type": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "recorded_at": { "type": "string", "format": "date-time" },
+    "clock_source": { "type": "string", "minLength": 1 },
+    "actor_id": { "$ref": "#/$defs/identifier" },
+    "actor_type": {
+      "type": "string",
+      "enum": ["person", "organization", "software_agent", "service"]
+    },
+    "role": { "type": "string", "minLength": 1 },
+    "human_supervisor_id": { "$ref": "#/$defs/identifier" },
+    "authority_grant_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "policy_id": { "$ref": "#/$defs/identifier" },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "action": {
+      "oneOf": [
+        { "type": "object", "minProperties": 1 },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "resource_scope": {
+      "oneOf": [
+        { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "input_refs": {
+      "oneOf": [
+        { "type": "array", "items": { "$ref": "#/$defs/reference" }, "uniqueItems": true },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "output_refs": {
+      "oneOf": [
+        { "type": "array", "items": { "$ref": "#/$defs/reference" }, "uniqueItems": true },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "decision": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "decision_basis": {
+      "oneOf": [
+        { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/reference" } },
+        { "$ref": "#/$defs/marker" }
+      ]
+    },
+    "truth_status": {
+      "type": "string",
+      "enum": ["verified", "inferred", "hypothesis", "unknown", "stale", "superseded"]
+    },
+    "prior_event_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "verifier_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "supersedes_event_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "statement_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "receipt_ref": { "$ref": "#/$defs/identifierOrMarker" },
+    "confidentiality": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted", "unknown"]
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_id", "expires_at", "legal_hold"],
+      "properties": {
+        "policy_id": { "$ref": "#/$defs/identifier" },
+        "expires_at": {
+          "oneOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "string", "enum": ["indefinite", "unknown"] }
+          ]
+        },
+        "legal_hold": { "type": "boolean" }
+      }
+    }
+  }
+}

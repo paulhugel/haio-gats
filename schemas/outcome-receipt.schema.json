@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:haio-gats:draft:schema:outcome-receipt:0.1",
+  "title": "HAIO-GATS draft outcome receipt",
+  "description": "Non-normative candidate for recording the observed result of an attempted governed action. It does not itself prove external-state truth or independent verification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "outcome_id",
+    "operation_id",
+    "submission_id",
+    "approval_id",
+    "authority_grant_id",
+    "executor_id",
+    "action_digest",
+    "started_at",
+    "completed_at",
+    "outcome_status",
+    "external_effect_status",
+    "output_refs",
+    "observed_effects",
+    "pre_event_id",
+    "post_event_id",
+    "recording_status",
+    "truth_status",
+    "signature"
+  ],
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 512 },
+    "digest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalization", "value"],
+      "properties": {
+        "algorithm": { "type": "string", "enum": ["sha-256"] },
+        "canonicalization": { "type": "string", "minLength": 1 },
+        "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref_id", "digest"],
+      "properties": {
+        "ref_id": { "$ref": "#/$defs/identifier" },
+        "digest": { "$ref": "#/$defs/digest" },
+        "locator": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "haio-gats.outcome-receipt/draft-0.1" },
+    "outcome_id": { "$ref": "#/$defs/identifier" },
+    "operation_id": { "$ref": "#/$defs/identifier" },
+    "submission_id": { "$ref": "#/$defs/identifier" },
+    "approval_id": { "$ref": "#/$defs/identifier" },
+    "authority_grant_id": { "$ref": "#/$defs/identifier" },
+    "executor_id": { "$ref": "#/$defs/identifier" },
+    "action_digest": { "$ref": "#/$defs/digest" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": {
+      "oneOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "string", "enum": ["unknown"] }
+      ]
+    },
+    "outcome_status": {
+      "type": "string",
+      "enum": ["succeeded", "failed", "denied", "halted", "partial", "unknown"]
+    },
+    "external_effect_status": {
+      "type": "string",
+      "enum": ["none", "confirmed", "partially_confirmed", "unconfirmed", "reversed", "unknown"]
+    },
+    "output_refs": { "type": "array", "items": { "$ref": "#/$defs/reference" } },
+    "observed_effects": { "type": "array", "items": { "type": "object", "minProperties": 1 } },
+    "pre_event_id": { "$ref": "#/$defs/identifier" },
+    "post_event_id": { "$ref": "#/$defs/identifier" },
+    "recording_status": {
+      "type": "string",
+      "enum": ["durable", "registration_pending", "registration_failed", "recovery_required"]
+    },
+    "truth_status": {
+      "type": "string",
+      "enum": ["verified", "inferred", "hypothesis", "unknown", "stale", "superseded"]
+    },
+    "verifier_id": {
+      "oneOf": [
+        { "$ref": "#/$defs/identifier" },
+        { "type": "string", "enum": ["not_applicable", "unknown"] }
+      ]
+    },
+    "verification_evidence_refs": { "type": "array", "items": { "$ref": "#/$defs/identifier" } },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "algorithm", "key_id", "value"],
+      "properties": {
+        "format": { "type": "string", "minLength": 1 },
+        "algorithm": { "type": "string", "minLength": 1 },
+        "key_id": { "$ref": "#/$defs/identifier" },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    },
+    "transparency_statement_id": { "$ref": "#/$defs/identifier" },
+    "transparency_receipt_ref": { "$ref": "#/$defs/identifier" }
+  }
+}

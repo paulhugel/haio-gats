@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:haio-gats:draft:schema:approval-receipt:0.1",
+  "title": "HAIO-GATS draft approval receipt",
+  "description": "Non-normative candidate for binding an authenticated human decision to one exact proposed action. It is not a transparency receipt profile.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "approval_id",
+    "operation_id",
+    "submission_id",
+    "human_supervisor_id",
+    "supervisor_identity_binding",
+    "authority_grant_id",
+    "policy_id",
+    "policy_version",
+    "decision",
+    "action_digest",
+    "resource_scope_digest",
+    "input_set_digest",
+    "constraints",
+    "issued_at",
+    "not_before",
+    "expires_at",
+    "nonce",
+    "signature"
+  ],
+  "$defs": {
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 512 },
+    "digest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalization", "value"],
+      "properties": {
+        "algorithm": { "type": "string", "enum": ["sha-256"] },
+        "canonicalization": { "type": "string", "minLength": 1 },
+        "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "identityBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer", "subject", "authenticated_at", "assurance_method"],
+      "properties": {
+        "issuer": { "$ref": "#/$defs/identifier" },
+        "subject": { "$ref": "#/$defs/identifier" },
+        "authenticated_at": { "type": "string", "format": "date-time" },
+        "assurance_method": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "haio-gats.approval-receipt/draft-0.1" },
+    "approval_id": { "$ref": "#/$defs/identifier" },
+    "operation_id": { "$ref": "#/$defs/identifier" },
+    "submission_id": { "$ref": "#/$defs/identifier" },
+    "human_supervisor_id": { "$ref": "#/$defs/identifier" },
+    "supervisor_identity_binding": { "$ref": "#/$defs/identityBinding" },
+    "authority_grant_id": { "$ref": "#/$defs/identifier" },
+    "policy_id": { "$ref": "#/$defs/identifier" },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "decision": { "type": "string", "enum": ["approved", "rejected", "constrained", "paused", "halted"] },
+    "action_digest": { "$ref": "#/$defs/digest" },
+    "resource_scope_digest": { "$ref": "#/$defs/digest" },
+    "input_set_digest": { "$ref": "#/$defs/digest" },
+    "constraints": { "type": "array", "items": { "type": "object", "minProperties": 1 } },
+    "decision_basis_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/identifier" },
+      "uniqueItems": true
+    },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "not_before": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "nonce": { "type": "string", "minLength": 16 },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "algorithm", "key_id", "value"],
+      "properties": {
+        "format": { "type": "string", "minLength": 1 },
+        "algorithm": { "type": "string", "minLength": 1 },
+        "key_id": { "$ref": "#/$defs/identifier" },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    },
+    "transparency_statement_id": { "$ref": "#/$defs/identifier" },
+    "transparency_receipt_ref": { "$ref": "#/$defs/identifier" }
+  }
+}
