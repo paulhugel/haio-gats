@@ -1,7 +1,8 @@
-# HAIO-GATS
+# HAIO-GATS v0.1.0
 
 Human-Supervised AI Operations Governance and Audit Trail Specification
-(HAIO-GATS) is a standards-aligned profile for accountable agentic workflows.
+(HAIO-GATS) — public read-only preview. This repository is a standards-aligned
+profile for accountable agentic workflows.
 It defines testable requirements for effective human supervision, bounded
 authority, lifecycle approval gates, event-level provenance, cryptographic
 transparency, independent custody, recovery, and conformance evidence.
