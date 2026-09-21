@@ -5,7 +5,7 @@ Status: **Public read-only preview; issues and discussions disabled**
 - Generated: 2026-09-20
 - Repository: repository root (`.`)
 - Branch: `fix/publication-readiness-v0.1.0`
-- Payload files: 25
+- Payload files: 26
 - Digest algorithm: SHA-256
 
 ## Scope and non-circularity
@@ -26,6 +26,7 @@ verification, independent custody, publication, or conformance.
 | `087f7a3cfdf8f1b616a238a16e91735cdd9b801f9a39fb601cc4161c301b79b8` | `CONTRIBUTING.md` |
 | `2d01d57684f8c6fc9bed1a2c1c8caf441dd48309f8527439a171e2a4992b8e27` | `GOVERNANCE.md` |
 | `b12a99c13ee911790c17a3dd1f18108557b4acc0e1c1b9b8ceb5632ff4477bb1` | `LICENSE` |
+| `81bf1259bcbe16c483247fcc89eae170d867506b1487d106d8acffe5d39ea78a` | `LICENSE-CC-BY-4.0.md` |
 | `9ce2d404cdbb6598afe37cb76009c1462f23e418e617f37134dc84db3883279e` | `LICENSE-DECISION.md` |
 | `687664d9539a16ae0d384c0b5b8e582ca866de0a08ee45e13624e08fffb5ce36` | `README.md` |
 | `d5ab02e27f21576e92bd7371213d060243bc76414e19606aea68e69feade64c1` | `ROADMAP.md` |
