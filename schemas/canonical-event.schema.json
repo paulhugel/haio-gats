@@ -39,10 +39,22 @@
       "type": "string",
       "enum": ["unknown", "not_applicable"]
     },
+    "unknownMarker": { "const": "unknown" },
+    "nonMarkerString": {
+      "type": "string",
+      "minLength": 1,
+      "not": { "enum": ["unknown", "not_applicable"] }
+    },
     "identifier": {
       "type": "string",
       "minLength": 1,
-      "maxLength": 512
+      "maxLength": 512,
+      "not": { "enum": ["unknown", "not_applicable"] }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
     },
     "identifierOrMarker": {
       "oneOf": [
@@ -81,7 +93,7 @@
     "event_id": { "$ref": "#/$defs/identifier" },
     "operation_id": { "$ref": "#/$defs/identifier" },
     "event_type": { "type": "string", "minLength": 1, "maxLength": 128 },
-    "recorded_at": { "type": "string", "format": "date-time" },
+    "recorded_at": { "$ref": "#/$defs/timestamp" },
     "clock_source": { "type": "string", "minLength": 1 },
     "actor_id": { "$ref": "#/$defs/identifier" },
     "actor_type": {
@@ -96,13 +108,13 @@
     "action": {
       "oneOf": [
         { "type": "object", "minProperties": 1 },
-        { "$ref": "#/$defs/marker" }
+        { "$ref": "#/$defs/unknownMarker" }
       ]
     },
     "resource_scope": {
       "oneOf": [
         { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
-        { "$ref": "#/$defs/marker" }
+        { "$ref": "#/$defs/unknownMarker" }
       ]
     },
     "input_refs": {
@@ -119,7 +131,7 @@
     },
     "decision": {
       "oneOf": [
-        { "type": "string", "minLength": 1 },
+        { "$ref": "#/$defs/nonMarkerString" },
         { "$ref": "#/$defs/marker" }
       ]
     },
@@ -150,12 +162,26 @@
         "policy_id": { "$ref": "#/$defs/identifier" },
         "expires_at": {
           "oneOf": [
-            { "type": "string", "format": "date-time" },
+            { "$ref": "#/$defs/timestamp" },
             { "type": "string", "enum": ["indefinite", "unknown"] }
           ]
         },
         "legal_hold": { "type": "boolean" }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "truth_status": { "const": "verified" } },
+        "required": ["truth_status"]
+      },
+      "then": {
+        "properties": {
+          "verifier_id": { "$ref": "#/$defs/identifier" },
+          "decision_basis": { "type": "array", "minItems": 1 }
+        }
+      }
+    }
+  ]
 }

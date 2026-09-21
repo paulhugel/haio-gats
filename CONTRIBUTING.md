@@ -1,8 +1,8 @@
 # Contributing
 
-HAIO-GATS welcomes technically precise, evidence-based contributions after the
-repository is separately authorized for publication. This local candidate is
-not yet open for contributions.
+HAIO-GATS welcomes technically precise, evidence-based contributions after a
+future governance decision enables collaboration. This public preview is
+read-only and is not currently open for contributions.
 
 ## Contribution classes
 
@@ -53,6 +53,6 @@ an unremediated system. Follow [`SECURITY.md`](SECURITY.md).
 
 ## Contributor-IP status
 
-Contributor intellectual-property terms are unresolved. Contributions must not
-be solicited or accepted until the Human Supervisor approves the repository's
-license and contributor-IP mechanism.
+The Human Supervisor approved CC BY 4.0 for specification prose and MIT for
+schemas, tests, fixtures, and tooling. Contributions remain disabled pending a
+separate contributor-IP and maintainer-process decision.

@@ -22,6 +22,12 @@ and the Zenodo deposit are the authoritative v0.1.0 publication. Any
 transcription discrepancy must be corrected in a new reviewed revision; it
 must not silently change the deposited version.
 
+> Correction-candidate notice (20 September 2026): this worktree proposes
+> reviewed errata and security clarifications that intentionally differ from
+> the deposited v0.1.0 text. They are not part of authoritative v0.1.0 unless
+> separately approved and published as a new revision. The deposited PDF
+> continues to control until that decision.
+
 ## Abstract
 
 Autonomous and semi-autonomous artificial intelligence systems can perform
@@ -100,6 +106,11 @@ level it satisfies, publish requirement-by-requirement evidence for every
 applicable normative requirement, and publish evidence from every test whose
 minimum level is at or below its declared level. Tests above that level **MUST**
 be reported as `not_applicable` with the level-based reason.
+
+Conformance is cumulative. An implementation claiming Level T **MUST** satisfy
+every applicable Level G duty and test in addition to the Level T duties and
+tests. An implementation claiming Level A **MUST** satisfy every applicable
+Level G and Level T duty and test in addition to the Level A duties and tests.
 
 ### 3.1 Cumulative levels
 
@@ -194,6 +205,12 @@ mutation, commit or promotion, publication or deployment, destructive action,
 material scope expansion, and residual-risk acceptance. Approval at one gate
 **MUST NOT** imply approval at another.
 
+An approval receipt **MUST** identify the exact gate and lifecycle transition
+authorized. A receipt intended for one transition **MUST NOT** authorize a
+different transition. Single-use approval receipts **MUST** be checked and
+atomically consumed by a stateful enforcement component; schema validation
+alone does not establish freshness or non-reuse.
+
 **AU-05 Scope drift.** The operation **MUST** stop and request a new human
 decision when action, resource, actor, risk, or expected effect falls outside
 the current grant.
@@ -203,6 +220,11 @@ the current grant.
 **ID-01 Authenticated identity.** Every human, AI agent, service, and delegated
 process **MUST** have an authenticated identifier bound to its audit statements.
 A display name or self-asserted label is insufficient.
+
+Where a record carries both a claimed actor identifier and an authentication
+binding, the authenticated subject **MUST** equal that claimed identifier.
+Schema validation alone does not establish this cross-field or credential-to-
+subject equality; the verifier or policy enforcement point **MUST** check it.
 
 **ID-02 Delegation.** Delegation **MUST** identify delegator, receiving actor,
 role, authority grant, operation, time bounds, and revocation status. Delegated
@@ -255,10 +277,16 @@ the minimum schema below. Applicable but undetermined values **MUST** be
 | `statement_id`, `receipt_ref` | Signed statement and transparency receipt. |
 | `confidentiality`, `retention` | Access class and retention rule. |
 
-At Level G, `statement_id` and `receipt_ref` may be `not_applicable`. At Levels
-G and T, `verifier_id` may be `not_applicable` only when independent
+`action` and `resource_scope` **MUST NOT** be `not_applicable`; when applicable
+but undetermined, they **MUST** be `unknown`. At Level G, `statement_id` and
+`receipt_ref` **MAY** be `not_applicable`. At Levels G and T, `verifier_id`
+**MAY** be `not_applicable` only when independent
 verification is not required. Event-type exceptions are limited to semantically
 inapplicable input/output, decision, predecessor, and supersession fields.
+
+Schema profiles using JSON Schema `format` for timestamps **MUST** enable format
+assertion and **MUST** also apply the profile's declared lexical timestamp
+constraint. A validator treating `format` only as annotation is insufficient.
 
 **EV-03 Provenance relations.** The implementation **SHOULD** represent people,
 software agents, activities, entities, delegation, association, attribution,
@@ -362,7 +390,7 @@ PROPOSED -> SCOPED -> AUTHORIZED -> EXECUTING -> EVIDENCED
 At Levels G and T, `VERIFIED` means a verification result was recorded against
 explicit criteria with the verifier identity and relationship declared; it
 does not itself mean independent verification. At Level A, `VERIFIED` also
-requires ID-05. Any state must be able to transition to `PAUSED`, `DENIED`,
+requires ID-05. Any state **MUST** be able to transition to `PAUSED`, `DENIED`,
 `FAILED`, `HALTED`, or `RECOVERY REQUIRED`. A transition **MUST** identify its
 actor, authority, evidence, and human decision. Later-state authorization
 **MUST NOT** be inferred from an earlier state.

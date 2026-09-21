@@ -2,7 +2,7 @@
 
 ## Current status
 
-This repository is a local, unpublished specification candidate. It contains no
+This repository is a public read-only specification preview. It contains no
 operational service and currently accepts no external vulnerability reports.
 
 Before publication, the Human Supervisor must designate a private reporting

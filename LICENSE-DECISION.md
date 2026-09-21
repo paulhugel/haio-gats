@@ -1,6 +1,6 @@
 # License decision
 
-Status: **Unresolved - Human Supervisor decision required before publication**
+Status: **Resolved by Human Supervisor approval for the public read-only preview**
 
 ## Existing licensed work
 
@@ -12,30 +12,26 @@ This fact does not automatically select a license for repository-native JSON
 Schemas, conformance fixtures, verifier software, build tooling, or future
 reference implementations.
 
-## Decision required
+## Approved decision
 
-Before public release, the Human Supervisor must approve:
+The Human Supervisor approved:
 
-1. The license for specification prose and derived documentation.
-2. The license for JSON Schemas and test fixtures.
-3. The license for executable code, if any is later added.
-4. Whether a Developer Certificate of Origin, contributor license agreement,
-   or another contributor-IP mechanism is required.
-5. Attribution and provenance requirements for third-party contributions.
-6. Trademark or project-name usage rules, if any.
+1. CC BY 4.0 for specification prose and the deposited PDF.
+2. MIT for schemas, conformance tests, fixtures, and repository tooling.
+3. A public read-only preview with issues and discussions disabled.
+4. Paul Garrett Hugel as the initial maintainer.
 
 ## Candidate approach for review
 
-A possible split-license approach is:
+A possible split-license approach, now approved for this preview, is:
 
 - CC BY 4.0 for specification prose and documentation.
-- A permissive software license, such as Apache-2.0, for schemas, fixtures,
-  verifiers, and reference code.
+- MIT for schemas, fixtures, verifiers, and reference code.
 
-This is a proposal only. No license is selected by this document.
+The repository-native MIT terms are in `LICENSE`. The deposited specification
+continues to carry its CC BY 4.0 terms.
 
 ## Publication gate
 
-The public repository must not be published until an approved `LICENSE` file
-or clearly scoped license files replace this decision placeholder and an
-authorized reviewer confirms that every included artifact is covered.
+The public preview is limited to review and reading. External contributions,
+issues, and discussions remain disabled until a later governance decision.

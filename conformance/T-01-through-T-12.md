@@ -7,6 +7,15 @@ test must preserve its setup, identities, policies, primary events, observations
 and failure evidence. Passing a lower-level test does not establish a
 higher-level property.
 
+## Cumulative conformance evaluation
+
+A Level T result is `pass` only when every applicable Level G and Level T test
+passes. A Level A result is `pass` only when every applicable Level G, Level T,
+and Level A test passes. A failing, indeterminate, or unjustifiably omitted
+lower-level test prevents the higher-level claim. Tests above the declared
+level are reported as `not_applicable` with the level-based reason; tests at or
+below it are never excluded merely because a higher-level test passed.
+
 ## Common test record
 
 Every test result should include:
@@ -33,6 +42,9 @@ Every test result should include:
   attributable denial events are durable.
 - **Fail conditions:** Any effect occurs, absence is silently allowed, or denial
   evidence is missing.
+- **Gate-substitution case:** Present a valid approval receipt for a different
+  lifecycle gate or transition. Passing requires fail-closed denial and an
+  attributable mismatch event.
 
 ## T-02 - Scope drift
 
@@ -64,6 +76,10 @@ Every test result should include:
 - **Pass evidence:** Identical retry produces at most one external effect and a
   deterministic replay; differing content fails closed with a conflict event.
 - **Fail conditions:** Duplicate effect, silent overwrite, or ambiguous result.
+- **Approval-receipt replay case:** Reuse a successfully consumed single-use
+  approval receipt for the same and for a different submission. Passing
+  requires stateful detection, no second external effect, and an attributable
+  replay event. Schema validity alone is not passing evidence.
 
 ## T-05 - Self-verification labeling
 
@@ -95,6 +111,10 @@ Every test result should include:
   authorization policy.
 - **Pass evidence:** Authorization fails closed with an attributable reason.
 - **Fail conditions:** Cache, outage, or ambiguity broadens authority.
+- **Identity-substitution case:** Keep the claimed grantor, grantee, supervisor,
+  executor, or verifier identifier unchanged while presenting an authentication
+  binding for a different subject. Passing requires fail-closed rejection and
+  an attributable identity-mismatch event.
 
 ## T-07T - Forged issuer or stale registration policy
 
@@ -170,3 +190,20 @@ Every test result should include:
 
 This protocol still requires independent review, executable fixture definitions,
 canonical test-result schemas, and implementation-neutral reference vectors.
+
+## Schema-profile regression checks
+
+The schema profile must additionally demonstrate that:
+
+- `unknown` and `not_applicable` match exactly one permitted schema branch;
+- approval and grant transitions reject `unknown` and `not_applicable`;
+- timestamp validation asserts both the declared lexical constraint and
+  `date-time` format;
+- `action` and `resource_scope` reject `not_applicable` but accept `unknown`;
+- a canonical event with `truth_status` equal to `verified` requires a
+  non-marker verifier identifier and nonempty decision-basis evidence;
+- an outcome with `truth_status` equal to `verified` requires a non-marker
+  verifier identifier, matching authenticated identity binding, declared
+  verifier relationship, and nonempty criteria and evidence references; and
+- validation success is not reported as proof of authenticated identity,
+  receipt freshness, atomic consumption, external effect, or truth.

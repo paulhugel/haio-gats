@@ -1,4 +1,15 @@
 .DS_Store
+.remember/
+.remember.zip
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+codex-security-scan/
+security-scan-output/
 *.swp
 *.tmp
 node_modules/

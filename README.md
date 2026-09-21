@@ -10,13 +10,13 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
-- Repository status: local Phase 0 publication candidate; uncommitted and not
-  published.
+- Repository status: public read-only preview; issues and discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
 
 This repository is not a certification, regulatory approval, legal opinion, or
-proof that any deployment conforms to HAIO-GATS.
+proof that any deployment conforms to HAIO-GATS. External contributions are
+not currently being accepted.
 
 ## Core assurance boundary
 
@@ -72,9 +72,9 @@ or repository status is not conformance evidence.
 
 ## Collaboration model
 
-The intended public project will invite review of specification language,
-schemas, threat assumptions, conformance tests, and interoperability. Until a
-separate publication decision is made, this candidate is local only.
+The public preview invites reading and review of specification language,
+schemas, threat assumptions, conformance tests, and interoperability. Issues,
+discussions, and external contributions are disabled during this preview.
 
 Normative changes remain subject to the authority model in
 [`GOVERNANCE.md`](GOVERNANCE.md). Contributions may inform a Human Supervisor
@@ -107,8 +107,8 @@ requests, fixtures, or audit examples.
 
 ## Licensing
 
-The published v0.1.0 specification is CC BY 4.0. Licensing for repository-native
-schemas, conformance software, and future code remains unresolved. See
+The published v0.1.0 specification is CC BY 4.0. Repository-native schemas,
+conformance software, and future code are MIT for this preview. See
 [`LICENSE-DECISION.md`](LICENSE-DECISION.md). No broader license grant should be
 inferred from the presence of the PDF.
 

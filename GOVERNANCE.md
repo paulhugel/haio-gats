@@ -63,8 +63,8 @@ true.
 
 ## Unresolved governance decisions
 
-- Maintainer and backup-maintainer identities.
-- Final contributor-IP terms.
+- Backup-maintainer identity.
+- Contributor-IP terms for a future enabled contribution process.
 - Required review counts and code-owner assignments.
 - Appeal and dispute-resolution process.
 - Emergency security-change process.

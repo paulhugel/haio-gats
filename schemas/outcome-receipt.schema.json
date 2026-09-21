@@ -13,6 +13,7 @@
     "approval_id",
     "authority_grant_id",
     "executor_id",
+    "executor_identity_binding",
     "action_digest",
     "started_at",
     "completed_at",
@@ -27,7 +28,29 @@
     "signature"
   ],
   "$defs": {
-    "identifier": { "type": "string", "minLength": 1, "maxLength": 512 },
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "not": { "enum": ["unknown", "not_applicable"] }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "identityBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer", "subject", "credential_id", "authenticated_at", "assurance_method"],
+      "properties": {
+        "issuer": { "$ref": "#/$defs/identifier" },
+        "subject": { "$ref": "#/$defs/identifier" },
+        "credential_id": { "$ref": "#/$defs/identifier" },
+        "authenticated_at": { "$ref": "#/$defs/timestamp" },
+        "assurance_method": { "type": "string", "minLength": 1 }
+      }
+    },
     "digest": {
       "type": "object",
       "additionalProperties": false,
@@ -57,11 +80,15 @@
     "approval_id": { "$ref": "#/$defs/identifier" },
     "authority_grant_id": { "$ref": "#/$defs/identifier" },
     "executor_id": { "$ref": "#/$defs/identifier" },
+    "executor_identity_binding": {
+      "allOf": [{ "$ref": "#/$defs/identityBinding" }],
+      "description": "The authenticated subject MUST equal executor_id; JSON Schema validation alone does not enforce cross-field equality."
+    },
     "action_digest": { "$ref": "#/$defs/digest" },
-    "started_at": { "type": "string", "format": "date-time" },
+    "started_at": { "$ref": "#/$defs/timestamp" },
     "completed_at": {
       "oneOf": [
-        { "type": "string", "format": "date-time" },
+        { "$ref": "#/$defs/timestamp" },
         { "type": "string", "enum": ["unknown"] }
       ]
     },
@@ -91,7 +118,24 @@
         { "type": "string", "enum": ["not_applicable", "unknown"] }
       ]
     },
-    "verification_evidence_refs": { "type": "array", "items": { "$ref": "#/$defs/identifier" } },
+    "verifier_identity_binding": {
+      "allOf": [{ "$ref": "#/$defs/identityBinding" }],
+      "description": "When truth_status is verified, the authenticated subject MUST equal verifier_id; JSON Schema validation alone does not enforce cross-field equality."
+    },
+    "verifier_relationship": {
+      "type": "string",
+      "enum": ["executor_self_check", "separate_non_independent", "independent"]
+    },
+    "verification_criteria_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/identifier" },
+      "uniqueItems": true
+    },
+    "verification_evidence_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/identifier" },
+      "uniqueItems": true
+    },
     "signature": {
       "type": "object",
       "additionalProperties": false,
@@ -105,5 +149,23 @@
     },
     "transparency_statement_id": { "$ref": "#/$defs/identifier" },
     "transparency_receipt_ref": { "$ref": "#/$defs/identifier" }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "truth_status": { "const": "verified" } },
+        "required": ["truth_status"]
+      },
+      "then": {
+        "required": ["verifier_id", "verifier_identity_binding", "verifier_relationship", "verification_criteria_refs", "verification_evidence_refs"],
+        "properties": {
+          "verifier_id": { "$ref": "#/$defs/identifier" },
+          "verifier_identity_binding": { "$ref": "#/$defs/identityBinding" },
+          "verifier_relationship": { "type": "string" },
+          "verification_criteria_refs": { "type": "array", "minItems": 1 },
+          "verification_evidence_refs": { "type": "array", "minItems": 1 }
+        }
+      }
+    }
+  ]
 }
