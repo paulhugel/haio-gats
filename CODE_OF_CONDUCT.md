@@ -25,6 +25,8 @@ and using project channels to facilitate unauthorized access or harmful action.
 
 ## Enforcement status
 
-Maintainer and reporting contacts have not yet been designated. This file is a
-publication candidate and is not an active reporting channel. Those contacts
-and enforcement procedures must be approved before public release.
+Paul Garrett Hugel is the sole maintainer and retains final authority for this
+preview. No private conduct-reporting channel or enforcement procedure is
+currently active; this file is not itself a reporting channel. A conduct-
+reporting contact and enforcement procedure must be designated before
+external conduct reporting or contributions are enabled.

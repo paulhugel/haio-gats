@@ -3,11 +3,14 @@
 ## Current status
 
 This repository is a public read-only specification preview. It contains no
-operational service and currently accepts no external vulnerability reports.
+operational service. Paul Garrett Hugel is the sole maintainer. GitHub Private
+Vulnerability Reporting is enabled for this repository; security researchers
+may use GitHub's private vulnerability-reporting workflow rather than a public
+issue.
 
-Before publication, the Human Supervisor must designate a private reporting
-channel, response roles, service-level expectations, encryption requirements,
-and coordinated-disclosure process.
+Response roles, service-level expectations, encryption requirements, and the
+coordinated-disclosure process remain to be formally designated. Conduct
+reports are separate and are not accepted through the security workflow.
 
 ## In-scope future reports
 
