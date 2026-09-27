@@ -11,7 +11,7 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
-- Repository status: public read-only preview; issues and discussions disabled.
+- Repository status: public read-only preview; GitHub Issues enabled for invited review feedback; Discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
 
@@ -74,8 +74,10 @@ or repository status is not conformance evidence.
 ## Collaboration model
 
 The public preview invites reading and review of specification language,
-schemas, threat assumptions, conformance tests, and interoperability. Issues,
-discussions, and external contributions are disabled during this preview.
+schemas, threat assumptions, conformance tests, and interoperability. GitHub
+Issues are enabled to record invited review feedback and proposed corrections.
+Discussions are disabled. Opening an issue does not authorize a specification
+change or constitute acceptance of an external contribution.
 
 Normative changes remain subject to the authority model in
 [`GOVERNANCE.md`](GOVERNANCE.md). Contributions may inform a Human Supervisor
