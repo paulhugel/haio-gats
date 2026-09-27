@@ -39,7 +39,8 @@ issues, and discussions remain disabled until a later governance decision.
 ## Current preview status (2026-09-26)
 
 The repository is a public preview. GitHub Issues are enabled for invited
-review feedback; Discussions are disabled. This later status supersedes the
+review feedback, with creation limited to collaborators and public reading
+available; Discussions are disabled. This later status supersedes the
 read-only-preview and issue-setting portions of the original decision above.
 The approved licenses and initial maintainer remain unchanged. Opening an issue
 does not authorize a specification change or constitute acceptance of an

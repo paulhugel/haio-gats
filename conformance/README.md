@@ -42,6 +42,27 @@ A conformance submission should identify:
 8. Register Level T/A statements and retain verifiable receipts.
 9. Retain independent checkpoints and recovery evidence at Level A.
 
+## Candidate schema-profile regression checks
+
+These checks assess this repository's non-normative schema profile; they do
+not add requirements to HAIO-GATS v0.1.0 or establish implementation
+conformance. The schema profile should demonstrate that:
+
+- `unknown` and `not_applicable` match exactly one permitted schema branch;
+- approval and grant transitions reject `unknown` and `not_applicable`;
+- `authority_grant_id` accepts an identifier or `unknown` when its value is
+  undetermined, and rejects `not_applicable`;
+- timestamp validation asserts both the declared lexical constraint and
+  `date-time` format;
+- `action` and `resource_scope` reject `not_applicable` but accept `unknown`;
+- a canonical event with `truth_status` equal to `verified` requires a
+  non-marker verifier identifier and nonempty decision-basis evidence;
+- an outcome with `truth_status` equal to `verified` requires a non-marker
+  verifier identifier, matching authenticated identity binding, declared
+  verifier relationship, and nonempty criteria and evidence references; and
+- validation success is not reported as proof of authenticated identity,
+  receipt freshness, atomic consumption, external effect, or truth.
+
 ## Future fixture layout
 
 ```text
