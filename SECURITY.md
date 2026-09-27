@@ -2,7 +2,7 @@
 
 ## Current status
 
-This repository is a public read-only specification preview. It contains no
+This repository is a public specification preview. It contains no
 operational service. Paul Garrett Hugel is the sole maintainer. GitHub Private
 Vulnerability Reporting is enabled for this repository; security researchers
 may use GitHub's private vulnerability-reporting workflow rather than a public

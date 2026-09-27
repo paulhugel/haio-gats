@@ -1,6 +1,6 @@
 # License decision
 
-Status: **Resolved by Human Supervisor approval for the public read-only preview**
+Status: **License selection resolved by Human Supervisor approval; preview status updated 2026-09-26**
 
 ## Existing licensed work
 
@@ -31,7 +31,17 @@ A possible split-license approach, now approved for this preview, is:
 The repository-native MIT terms are in `LICENSE`. The deposited specification
 continues to carry its CC BY 4.0 terms.
 
-## Publication gate
+## Original publication gate (historical)
 
 The public preview is limited to review and reading. External contributions,
 issues, and discussions remain disabled until a later governance decision.
+
+## Current preview status (2026-09-26)
+
+The repository is a public preview. GitHub Issues are enabled for invited
+review feedback; Discussions are disabled. This later status supersedes the
+read-only-preview and issue-setting portions of the original decision above.
+The approved licenses and initial maintainer remain unchanged. Opening an issue
+does not authorize a specification change or constitute acceptance of an
+external contribution; the separate contributor-IP and maintainer-process
+decision remains pending.
