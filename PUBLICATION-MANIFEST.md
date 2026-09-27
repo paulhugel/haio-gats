@@ -11,13 +11,15 @@ Status: **Public read-only preview; issues and discussions disabled**
 ## Scope and non-circularity
 
 This manifest covers every candidate payload file except itself and excludes
-all `.git/` metadata. Its own SHA-256 is reported separately after generation
-to avoid a circular self-digest.
+all `.git/` metadata. The file digests below describe the 2026-09-20
+snapshot; they do not describe files after subsequent edits. The manifest's
+own SHA-256 is excluded from the payload to avoid a circular self-digest.
+No independent self-digest or release record is claimed here.
 
 No digest establishes authorship, authority, truth, completeness, independent
 verification, independent custody, publication, or conformance.
 
-## File digests
+## File digests — 2026-09-20 snapshot
 
 | SHA-256 | Path |
 | --- | --- |
@@ -76,17 +78,20 @@ verification, independent custody, publication, or conformance.
   artifacts are stored only under `/tmp`.
 - Markdown text passes the candidate's ASCII-only check.
 - A basic secret-pattern scan found no candidate credential material.
-- The correction candidate is on local branch
+- At the 2026-09-20 snapshot, the correction candidate was on local branch
   `fix/publication-readiness-v0.1.0`, derived from signed baseline commit
-  `9b02a9dd286bccb08f29df3a79ed6b26fb761ba2`; it has no configured remote and
-  its correction changes are uncommitted.
+  `9b02a9dd286bccb08f29df3a79ed6b26fb761ba2`; the snapshot recorded no
+  configured remote and uncommitted correction changes. These are historical
+  checkout facts, not current remote or worktree claims.
 
 ### Unknown or pending
 
 - The Markdown transcription has not received independent line-by-line review
   against the deposited PDF.
-- Final license, contributor-IP mechanism, maintainer assignments, code owners,
-  private security-reporting channel, and normative voting rules are unresolved.
+- Contributor-IP mechanism, maintainer assignments, code owners, security
+  response and coordinated-disclosure procedures, and normative voting rules
+  are unresolved. GitHub Private Vulnerability Reporting is enabled; channel
+  availability does not settle those procedures.
 - Independent design, disclosure, security, and publication review are pending.
 - No implementation, operational conformance, independent custody, or
   transparency-service integration is claimed.

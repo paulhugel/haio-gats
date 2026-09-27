@@ -11,7 +11,7 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
-- Repository status: public preview; GitHub Issues enabled for invited review feedback; Discussions disabled.
+- Repository status: public preview; GitHub Issues enabled, with issue creation limited to collaborators and public reading available; Discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
 
@@ -43,7 +43,9 @@ These properties must remain distinct:
   verification.
 - Public collaboration is not Human Supervisor authorization.
 - Model confidence, including TypeSafe/Jev output, is advisory evidence and
-  cannot grant authority.
+  cannot grant authority. TypeSafe/Jev references in repository architecture
+  material are exploratory and non-normative; they are not requirements of the
+  published v0.1.0 specification.
 
 ## Repository map
 
@@ -75,9 +77,11 @@ or repository status is not conformance evidence.
 
 The public preview invites reading and review of specification language,
 schemas, threat assumptions, conformance tests, and interoperability. GitHub
-Issues are enabled to record invited review feedback and proposed corrections.
-Discussions are disabled. Opening an issue does not authorize a specification
-change or constitute acceptance of an external contribution.
+Issues are enabled for invited review feedback and proposed corrections. Issue
+creation is limited to collaborators; issues are readable to everyone who can
+view this public repository. Discussions are disabled. Opening an issue does
+not authorize a specification change or constitute acceptance of an external
+contribution.
 
 Normative changes remain subject to the authority model in
 [`GOVERNANCE.md`](GOVERNANCE.md). Contributions may inform a Human Supervisor

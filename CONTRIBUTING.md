@@ -1,9 +1,9 @@
 # Contributing
 
-HAIO-GATS welcomes technically precise, evidence-based contributions after a
-future governance decision enables collaboration. This repository is a public
-preview. GitHub Issues are enabled for invited review feedback, but external
-contributions are not currently accepted.
+HAIO-GATS welcomes technically precise, evidence-based proposals for review.
+This repository is a public preview. GitHub Issues are readable to everyone
+who can view the repository, but issue creation is limited to collaborators.
+External contributions are not currently accepted.
 
 ## Contribution classes
 
@@ -55,5 +55,6 @@ an unremediated system. Follow [`SECURITY.md`](SECURITY.md).
 ## Contributor-IP status
 
 The Human Supervisor approved CC BY 4.0 for specification prose and MIT for
-schemas, tests, fixtures, and tooling. Contributions remain disabled pending a
-separate contributor-IP and maintainer-process decision.
+schemas, tests, fixtures, and tooling. Issue access for invited collaborators
+does not enable general contribution acceptance. Contributions remain disabled
+pending a separate contributor-IP and maintainer-process decision.

@@ -102,7 +102,12 @@
     },
     "role": { "type": "string", "minLength": 1 },
     "human_supervisor_id": { "$ref": "#/$defs/identifier" },
-    "authority_grant_id": { "$ref": "#/$defs/identifierOrMarker" },
+    "authority_grant_id": {
+      "oneOf": [
+        { "$ref": "#/$defs/identifier" },
+        { "$ref": "#/$defs/unknownMarker" }
+      ]
+    },
     "policy_id": { "$ref": "#/$defs/identifier" },
     "policy_version": { "type": "string", "minLength": 1 },
     "action": {

@@ -8,9 +8,11 @@ Vulnerability Reporting is enabled for this repository; security researchers
 may use GitHub's private vulnerability-reporting workflow rather than a public
 issue.
 
-Response roles, service-level expectations, encryption requirements, and the
-coordinated-disclosure process remain to be formally designated. Conduct
-reports are separate and are not accepted through the security workflow.
+GitHub provides an enabled private reporting channel. Response roles,
+service-level expectations, encryption requirements, and the coordinated-
+disclosure process remain to be formally designated; channel availability
+does not establish those procedures or response commitments. Conduct reports
+are separate and are not accepted through the security workflow.
 
 ## In-scope future reports
 
@@ -26,8 +28,9 @@ reports are separate and are not accepted through the security workflow.
 
 Do not publish secrets, personal data, private deployment details, proof-of-
 concept attacks against live systems, or uncoordinated vulnerabilities in a
-public issue. A future security policy must provide a private channel before
-the repository is opened to outside reports.
+public issue. Use GitHub's private vulnerability-reporting workflow for
+security reports. Its availability does not guarantee a response time or
+complete the still-pending coordinated-disclosure policy.
 
 ## Evidence limits
 

@@ -190,20 +190,3 @@ Every test result should include:
 
 This protocol still requires independent review, executable fixture definitions,
 canonical test-result schemas, and implementation-neutral reference vectors.
-
-## Schema-profile regression checks
-
-The schema profile must additionally demonstrate that:
-
-- `unknown` and `not_applicable` match exactly one permitted schema branch;
-- approval and grant transitions reject `unknown` and `not_applicable`;
-- timestamp validation asserts both the declared lexical constraint and
-  `date-time` format;
-- `action` and `resource_scope` reject `not_applicable` but accept `unknown`;
-- a canonical event with `truth_status` equal to `verified` requires a
-  non-marker verifier identifier and nonempty decision-basis evidence;
-- an outcome with `truth_status` equal to `verified` requires a non-marker
-  verifier identifier, matching authenticated identity binding, declared
-  verifier relationship, and nonempty criteria and evidence references; and
-- validation success is not reported as proof of authenticated identity,
-  receipt freshness, atomic consumption, external effect, or truth.
