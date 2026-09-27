@@ -1,7 +1,7 @@
 # HAIO-GATS v0.1.0
 
 Human-Supervised AI Operations Governance and Audit Trail Specification
-(HAIO-GATS) — public read-only preview. This repository is a standards-aligned
+(HAIO-GATS) — public preview. This repository is a standards-aligned
 profile for accountable agentic workflows.
 It defines testable requirements for effective human supervision, bounded
 authority, lifecycle approval gates, event-level provenance, cryptographic
@@ -11,7 +11,7 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
-- Repository status: public read-only preview; GitHub Issues enabled for invited review feedback; Discussions disabled.
+- Repository status: public preview; GitHub Issues enabled for invited review feedback; Discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
 

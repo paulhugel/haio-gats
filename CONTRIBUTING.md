@@ -1,8 +1,9 @@
 # Contributing
 
 HAIO-GATS welcomes technically precise, evidence-based contributions after a
-future governance decision enables collaboration. This public preview is
-read-only and is not currently open for contributions.
+future governance decision enables collaboration. This repository is a public
+preview. GitHub Issues are enabled for invited review feedback, but external
+contributions are not currently accepted.
 
 ## Contribution classes
 
