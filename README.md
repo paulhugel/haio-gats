@@ -1,7 +1,7 @@
 # HAIO-GATS v0.1.0
 
 Human-Supervised AI Operations Governance and Audit Trail Specification
-(HAIO-GATS) — public read-only preview. This repository is a standards-aligned
+(HAIO-GATS) — public preview. This repository is a standards-aligned
 profile for accountable agentic workflows.
 It defines testable requirements for effective human supervision, bounded
 authority, lifecycle approval gates, event-level provenance, cryptographic
@@ -11,7 +11,7 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
-- Repository status: public read-only preview; issues and discussions disabled.
+- Repository status: public preview; GitHub Issues enabled for invited review feedback; Discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
 
@@ -74,8 +74,10 @@ or repository status is not conformance evidence.
 ## Collaboration model
 
 The public preview invites reading and review of specification language,
-schemas, threat assumptions, conformance tests, and interoperability. Issues,
-discussions, and external contributions are disabled during this preview.
+schemas, threat assumptions, conformance tests, and interoperability. GitHub
+Issues are enabled to record invited review feedback and proposed corrections.
+Discussions are disabled. Opening an issue does not authorize a specification
+change or constitute acceptance of an external contribution.
 
 Normative changes remain subject to the authority model in
 [`GOVERNANCE.md`](GOVERNANCE.md). Contributions may inform a Human Supervisor
@@ -115,7 +117,9 @@ inferred from the presence of the PDF.
 
 ## Citation
 
-Hugel, P. G. (2026). *Human-Supervised AI Operations Governance and Audit Trail
-Specification: A Standards-Aligned Profile for Accountable Agentic Workflows
-(HAIO-GATS, Version 0.1.0).* Zenodo.
-[https://doi.org/10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642)
+Suggested Citation: Hugel, Paul Garrett, Human-Supervised AI Operations
+Governance and Audit Trail Specification: A Standards-aligned Profile for
+Accountable Agentic Workflows (September 16, 2026). Zenodo, Technical Note
+v0.1.0, September 16, 2026. DOI:10.5281/zenodo.22800642, Available at SSRN:
+[https://ssrn.com/abstract=7485660](https://ssrn.com/abstract=7485660) or
+[http://dx.doi.org/10.2139/ssrn.7485660](http://dx.doi.org/10.2139/ssrn.7485660)
