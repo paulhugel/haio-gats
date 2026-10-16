@@ -1,0 +1,54 @@
+name: Publish non-normative visual explorer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-explorer.yml
+      - examples/non-normative/haio-gats-x3d-explorer.html
+      - examples/non-normative/haio-gats-cycle.x3d
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages-explorer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Stage only the approved explorer
+        run: |
+          mkdir -p _site/examples/non-normative
+          cp examples/non-normative/haio-gats-x3d-explorer.html _site/index.html
+          cp examples/non-normative/haio-gats-x3d-explorer.html _site/examples/non-normative/
+          cp examples/non-normative/haio-gats-cycle.x3d _site/examples/non-normative/
+          touch _site/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

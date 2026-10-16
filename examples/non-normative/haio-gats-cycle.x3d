@@ -1,0 +1,1856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile="Immersive" version="4.0">
+  <Scene>
+    <WorldInfo title="HAIO-GATS illustrative linear lifecycle walkthrough" />
+    <Background skyColor="0.035 0.09 0.17" />
+    <Viewpoint DEF="TravelerView" description="Inside the straight lifecycle" position="0 1.7 4.5" orientation="0 1 0 0" fieldOfView="1.13" centerOfRotation="0 1.7 -4.5" jump="true" retainUserOffsets="false" />
+    <Viewpoint DEF="OverviewView" description="Overview of the full start-to-finish route" position="0 78 -36" orientation="1 0 0 -1.42" fieldOfView="1.10" centerOfRotation="0 0 -36" jump="true" />
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;WALK&quot; &quot;ANY&quot;" headlight="true" />
+    <DirectionalLight direction="-0.4 -1 -0.7" intensity="0.8" />
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.18 0.55 0.76" emissiveColor="0.18 0.55 0.76" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 7.00 -2.70 -1.20 -83.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.18 0.55 0.76" emissiveColor="0.18 0.55 0.76" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="2.70 -1.20 7.00 2.70 -1.20 -83.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 0.00 2.70 -1.20 0.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 0.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch0" description="Select PROPOSED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;01&quot; &quot;PROPOSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -9.00 2.70 -1.20 -9.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -9.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch1" description="Select SCOPED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;02&quot; &quot;SCOPED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -18.00 2.70 -1.20 -18.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -18.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.78 0.50 0.17" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch2" description="Select AUTHORIZED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;03&quot; &quot;AUTHORIZED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -27.00 2.70 -1.20 -27.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -27.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch3" description="Select EXECUTING" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;04&quot; &quot;EXECUTING&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -36.00 2.70 -1.20 -36.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -36.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch4" description="Select EVIDENCED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;05&quot; &quot;EVIDENCED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -45.00 2.70 -1.20 -45.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -45.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch5" description="Select VERIFIED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;06&quot; &quot;VERIFIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -54.00 2.70 -1.20 -54.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -54.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.78 0.50 0.17" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch6" description="Select PROMOTION-AUTHORIZED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;07&quot; &quot;PROMOTION-AUTHORIZED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -63.00 2.70 -1.20 -63.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -63.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch7" description="Select PROMOTED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;08&quot; &quot;PROMOTED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -72.00 2.70 -1.20 -72.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -72.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch8" description="Select REVERIFIED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;09&quot; &quot;REVERIFIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65" />
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -81.00 2.70 -1.20 -81.00" />
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -81.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="3.15 1.35 0.52" />
+      </Shape>
+      <TouchSensor DEF="StageTouch9" description="Select CLOSED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;10&quot; &quot;CLOSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform DEF="TimelineMarker" translation="0 5.0 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.97 0.76 0.21" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Sphere radius="0.24" />
+      </Shape>
+    </Transform>
+    <Switch DEF="ControlGallery" whichChoice="0">
+      <Group>
+        <Transform translation="-4.80 1.70 1.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch0" description="Inspect HS-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-01&quot; &quot;Supervisor&quot; &quot;designation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -1.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch1" description="Inspect HS-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-02&quot; &quot;Informed decision&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -3.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch2" description="Inspect HS-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-03&quot; &quot;Effective control&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -5.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch3" description="Inspect HS-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-04&quot; &quot;Live monitoring&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -7.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch4" description="Inspect HS-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-05&quot; &quot;Automation bias&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -10.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch5" description="Inspect HS-06" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;HS-06&quot; &quot;Supervisory&quot; &quot;decisions&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -12.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch6" description="Inspect AU-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;AU-01&quot; &quot;Authority grant&quot; &quot;object&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -14.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch7" description="Inspect AU-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;AU-02&quot; &quot;Authenticated&quot; &quot;binding&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -16.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch8" description="Inspect AU-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;AU-03&quot; &quot;Least authority&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -18.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch9" description="Inspect AU-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;AU-04&quot; &quot;Distinct approval&quot; &quot;gates&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -21.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch10" description="Inspect AU-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;AU-05&quot; &quot;Scope drift&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -23.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch11" description="Inspect ID-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;ID-01&quot; &quot;Identity binding&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -25.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch12" description="Inspect ID-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;ID-02&quot; &quot;Bounded delegation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -27.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch13" description="Inspect ID-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;ID-03&quot; &quot;Separation of&quot; &quot;duties&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -29.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch14" description="Inspect ID-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;ID-04&quot; &quot;Honest&quot; &quot;verification&quot; &quot;labels&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -32.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch15" description="Inspect ID-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;ID-05&quot; &quot;Independent&quot; &quot;verifier&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -34.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch16" description="Inspect EV-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-01&quot; &quot;Automatic event&quot; &quot;capture&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -36.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch17" description="Inspect EV-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-02&quot; &quot;Minimum event&quot; &quot;envelope&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -38.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch18" description="Inspect EV-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-03&quot; &quot;Provenance mapping&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -40.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch19" description="Inspect EV-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-04&quot; &quot;Evidence truth&quot; &quot;status&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -43.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch20" description="Inspect EV-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-05&quot; &quot;Linked evidence&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -45.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch21" description="Inspect EV-06" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;EV-06&quot; &quot;Duplicate handling&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -47.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch22" description="Inspect CT-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-01&quot; &quot;Signed statements&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -49.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch23" description="Inspect CT-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-02&quot; &quot;Registration&quot; &quot;policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -51.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch24" description="Inspect CT-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-03&quot; &quot;Reproducible&quot; &quot;checks&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -54.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch25" description="Inspect CT-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-04&quot; &quot;Append-only&quot; &quot;history&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -56.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch26" description="Inspect CT-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-05&quot; &quot;Non-equivocation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -58.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch27" description="Inspect CT-06" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-06&quot; &quot;Independent&quot; &quot;custody&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -60.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch28" description="Inspect CT-07" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;CT-07&quot; &quot;Separate proof&quot; &quot;claims&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -62.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch29" description="Inspect PS-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;PS-01&quot; &quot;Minimize sensitive&quot; &quot;data&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -65.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch30" description="Inspect PS-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;PS-02&quot; &quot;Separated views&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -67.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch31" description="Inspect PS-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;PS-03&quot; &quot;Accountable&quot; &quot;evidence access&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -69.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch32" description="Inspect PS-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;PS-04&quot; &quot;Compromised key&quot; &quot;response&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -71.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch33" description="Inspect RC-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;RC-01&quot; &quot;Retention policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -73.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch34" description="Inspect RC-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;RC-02&quot; &quot;Durable&quot; &quot;publication&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -76.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch35" description="Inspect RC-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;RC-03&quot; &quot;Backup and restore&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -78.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="ControlTouch36" description="Inspect RC-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;RC-04&quot; &quot;Recovery&quot; &quot;reconciliation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Switch DEF="FieldGallery" whichChoice="0">
+      <Group>
+        <Transform translation="4.80 1.70 1.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch0" description="Inspect event_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;event_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -2.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch1" description="Inspect operation_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;operation_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -5.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch2" description="Inspect event_type" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;event_type&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -8.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch3" description="Inspect recorded_at" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;recorded_at&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -12.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch4" description="Inspect actor_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;actor_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -15.50">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch5" description="Inspect actor_type" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;actor_type&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -18.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch6" description="Inspect role" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;role&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -22.10">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch7" description="Inspect human_supervisor_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;human_supervisor_i&quot; &quot;d&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -25.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch8" description="Inspect authority_grant_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;authority_grant_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -28.70">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch9" description="Inspect policy_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;policy_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -32.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch10" description="Inspect policy_version" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;policy_version&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -35.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch11" description="Inspect action" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;action&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -38.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch12" description="Inspect resource_scope" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;resource_scope&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -41.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch13" description="Inspect decision" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;decision&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -45.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch14" description="Inspect decision_basis" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;decision_basis&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -48.50">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch15" description="Inspect input_refs" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;input_refs&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -51.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch16" description="Inspect output_refs" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;output_refs&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -55.10">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch17" description="Inspect truth_status" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;truth_status&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -58.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch18" description="Inspect prior_event_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;prior_event_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -61.70">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch19" description="Inspect verifier_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;verifier_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -65.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch20" description="Inspect supersedes_event_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;supersedes_event_i&quot; &quot;d&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -68.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch21" description="Inspect statement_id" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;statement_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -71.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch22" description="Inspect receipt_ref" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;receipt_ref&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -74.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch23" description="Inspect confidentiality" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;confidentiality&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -78.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.15 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="FieldTouch24" description="Inspect retention" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;retention&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Switch DEF="TestGallery" whichChoice="0">
+      <Group>
+        <Transform translation="7.20 3.40 0.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch0" description="Inspect T-01" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-01&quot; &quot;Missing supervisor&quot; &quot;/ approval&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -5.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch1" description="Inspect T-02" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-02&quot; &quot;Outside-grant&quot; &quot;action&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -11.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch2" description="Inspect T-03" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-03&quot; &quot;Emergency halt&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -17.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch3" description="Inspect T-04" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-04&quot; &quot;Duplicate /&quot; &quot;conflicting&quot; &quot;identifier&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -23.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch4" description="Inspect T-05" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-05&quot; &quot;Executor&quot; &quot;self-check&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -29.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch5" description="Inspect T-06" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-06&quot; &quot;History tampering&quot; &quot;/ rechain&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -34.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch6" description="Inspect T-07G" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-07G&quot; &quot;Expired or revoked&quot; &quot;grant&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -40.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch7" description="Inspect T-07T" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-07T&quot; &quot;Forged issuer /&quot; &quot;stale registration&quot; &quot;policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -46.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch8" description="Inspect T-08" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-08&quot; &quot;Unauthorized&quot; &quot;disclosure&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -52.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch9" description="Inspect T-09" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-09&quot; &quot;Stale backup&quot; &quot;recovery&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -58.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch10" description="Inspect T-10" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-10&quot; &quot;Action succeeds,&quot; &quot;registration fails&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -63.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch11" description="Inspect T-11" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-11&quot; &quot;Key rotation /&quot; &quot;compromise&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -69.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch12" description="Inspect T-12G" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-12G&quot; &quot;Correct an earlier&quot; &quot;false claim&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -75.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09" />
+            </Appearance>
+            <Box size="2.30 1.04 0.52" />
+          </Shape>
+          <TouchSensor DEF="TestTouch13" description="Inspect T-12T" />
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+              </Appearance>
+              <Text string="&quot;T-12T&quot; &quot;Correct a&quot; &quot;registered false&quot; &quot;claim&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Transform translation="8.20 -0.30 -9.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="2.45 1.05 0.52" />
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch0" description="Inspect PAUSED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;PAUSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="-8.20 -0.30 -27.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="2.45 1.05 0.52" />
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch1" description="Inspect DENIED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;DENIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="8.20 -0.30 -45.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="2.45 1.05 0.52" />
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch2" description="Inspect FAILED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;FAILED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="-8.20 -0.30 -63.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="2.45 1.05 0.52" />
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch3" description="Inspect HALTED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;HALTED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="8.20 -0.30 -81.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09" />
+        </Appearance>
+        <Box size="2.45 1.05 0.52" />
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch4" description="Inspect RECOVERY REQUIRED" />
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1" />
+          </Appearance>
+          <Text string="&quot;RECOVERY REQUIRED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12" />
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+  </Scene>
+</X3D>

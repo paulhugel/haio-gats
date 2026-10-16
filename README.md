@@ -56,7 +56,11 @@ These properties must remain distinct:
 | `conformance/` | Test descriptions and future fixture contract | Draft, non-normative except where quoting v0.1.0 |
 | `architecture/` | Threat, trust, custody, failure, and transparency analysis | Draft, non-normative |
 | `decisions/` | Proposed architecture decision records | Proposed |
-| `examples/non-normative/` | Future illustrative examples | Non-normative |
+| [`examples/non-normative/`](examples/non-normative/README.md) | Illustrative visual explorer and examples | Non-normative |
+
+## Non-normative visual explorer
+
+[Open the interactive explorer](https://paulhugel.github.io/haio-gats/examples/non-normative/haio-gats-x3d-explorer.html) or [read its scope and limitations](examples/non-normative/README.md). This static illustration does not execute governed operations or demonstrate conformance. The deposited specification PDF remains authoritative.
 
 ## Conformance levels
 

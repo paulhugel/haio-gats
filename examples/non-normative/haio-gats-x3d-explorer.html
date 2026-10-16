@@ -1,0 +1,2021 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>HAIO-GATS · Visual Specification Explorer</title>
+<style>
+:root{--nav:#12233c;--nav2:#0a1729;--ink:#16263c;--muted:#637187;--line:#e1e7ef;--bg:#f3f6fa;--paper:#fff;--blue:#1768b8;--teal:#067b76;--purple:#6b56ac;--amber:#a86913;--red:#b5424b;--shadow:0 14px 35px rgba(19,41,69,.055);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+*{box-sizing:border-box} body{margin:0;background:var(--bg)}button,input{font:inherit} button{cursor:pointer} a{color:#196bb9} button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #7dbaf5;outline-offset:2px} .shell{display:flex;min-height:100vh}.sidebar{flex:0 0 245px;width:245px;background:linear-gradient(180deg,var(--nav),var(--nav2));color:#eaf3ff;min-height:100vh;padding:27px 16px;position:sticky;top:0;align-self:flex-start;display:flex;flex-direction:column;gap:25px}.logo{display:flex;align-items:center;gap:11px;padding:2px 10px 17px;border-bottom:1px solid #ffffff24}.logo-icon{width:39px;height:39px;border:1px solid #8eb9e9aa;border-radius:12px;display:grid;place-items:center;background:#ffffff17;font-weight:800;color:#d7eeff;font-size:21px}.logo b{font-size:15px;letter-spacing:.04em}.logo small{display:block;color:#adbed1;font-size:11px;margin-top:3px;letter-spacing:.02em}.nav-label{color:#8194ad;font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;margin:3px 12px 10px}.nav{display:grid;gap:5px}.nav-btn{display:flex;align-items:center;gap:11px;width:100%;padding:12px 13px;background:transparent;color:#b7c7da;border:1px solid transparent;border-radius:10px;text-align:left;font-size:13px;font-weight:620}.nav-btn svg{flex:0 0 auto}.nav-btn:hover{background:#ffffff12;color:#fff}.nav-btn.active{background:#f0f6ff17;color:#fff;border-color:#91b9e53c}.nav-btn.active .nav-dot{background:#74ccef}.nav-dot{width:7px;height:7px;border-radius:50%;background:#516782;margin-left:auto}.sidebar-foot{margin-top:auto;border-top:1px solid #ffffff25;padding:19px 12px 0;color:#aabbcf;font-size:11px;line-height:1.6}.sidebar-foot strong{display:block;color:#e7f2ff;font-weight:650;margin-bottom:4px}.sidebar-foot a{color:#b3dcff;text-decoration:none}.main{flex:1;min-width:0}.topbar{height:73px;display:flex;align-items:center;justify-content:space-between;padding:0 42px;border-bottom:1px solid var(--line);background:#ffffffde;gap:15px}.crumb{font-size:12px;color:#8995a7;letter-spacing:.015em}.crumb strong{font-weight:720;color:#253c5b}.topmeta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.pill{border-radius:100px;border:1px solid #d6e0ec;color:#586f87;background:#f8fbff;font-size:10px;font-weight:750;letter-spacing:.045em;padding:6px 10px;white-space:nowrap}.pill.blue{color:#165eaf;background:#e9f3ff;border-color:#cfe2fb}.pill.amber{color:#98601d;background:#fff8e9;border-color:#f3dfb3}.content{max-width:1380px;padding:34px 42px 70px;margin:auto}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}.pagehead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:23px;flex-wrap:wrap}.pagehead h1{font-size:clamp(27px,3vw,38px);line-height:1.12;letter-spacing:-.04em;margin:0 0 10px;font-weight:780}.pagehead p{margin:0;color:var(--muted);font-size:14px;line-height:1.65;max-width:710px}.linkbtn{border:1px solid #cbdbe9;border-radius:9px;background:#fff;color:#285884;text-decoration:none;font-size:12px;font-weight:700;padding:10px 13px;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.linkbtn:hover{background:#f3f8ff}.hero{background:linear-gradient(110deg,#14355b,#193d67 56%,#11546b);border-radius:18px;padding:34px 35px;color:#fff;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;overflow:hidden;position:relative;box-shadow:0 10px 28px #15416b1b}.hero:after{content:"";position:absolute;right:-75px;top:-120px;width:350px;height:350px;border:1px solid #ffffff19;border-radius:100%;box-shadow:0 0 0 40px #ffffff05,0 0 0 100px #ffffff03;pointer-events:none}.hero .tag{display:inline-flex;gap:7px;align-items:center;font-size:10px;color:#c1ecff;letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:15px}.hero h2{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.035em;line-height:1.17;margin:0 0 15px;max-width:540px}.hero p{font-size:13px;line-height:1.75;color:#d7e7f6;max-width:540px;margin:0}.hero-diagram{display:grid;align-items:center;position:relative;z-index:1}.diagram-frame{background:#ffffff0d;border:1px solid #ffffff29;border-radius:15px;padding:18px}.diagram-head{color:#b8d3eb;font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;margin-bottom:15px}.diagram-human{background:#dceeff;color:#16416e;border-radius:10px;padding:12px;text-align:center;font-weight:800;font-size:13px}.diagram-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin:0 0 9px}.diagram-chip{background:#ffffff13;border:1px solid #ffffff35;color:#e9f5ff;border-radius:7px;text-align:center;padding:10px 4px;font-size:10px;line-height:1.35;font-weight:680}.diagram-arrow{height:22px;display:grid;place-items:center;color:#b0d4f4;font-size:17px}.diagram-footer{font-size:10px;color:#cfe6fa;text-align:center;border-top:1px solid #ffffff20;margin-top:12px;padding-top:11px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:17px 0 30px}.stat{border:1px solid var(--line);background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:18px 20px}.stat b{font-size:30px;letter-spacing:-.04em;display:block;line-height:1}.stat span{font-size:12px;color:var(--muted);display:block;margin-top:9px;font-weight:630}.stat small{display:block;font-size:10px;color:#8794a5;margin-top:6px}.sectionline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:30px 0 15px}.sectionline h2{margin:0;font-size:19px;letter-spacing:-.025em}.sectionline p{margin:5px 0 0;color:var(--muted);font-size:12px}.sectionline .smallmeta{color:#8392a4;font-weight:650;font-size:11px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:13px;padding:20px}.card h3{margin:11px 0 9px;font-size:15px;letter-spacing:-.015em}.card p{margin:0;font-size:12px;color:var(--muted);line-height:1.7}.mini-icon{border-radius:9px;display:inline-grid;place-items:center;width:36px;height:36px;background:#edf5fd;color:var(--blue);font-weight:850;font-size:15px}.mini-icon.teal{background:#e8f7f3;color:#0b7f77}.mini-icon.purple{background:#f0ecfd;color:#6753ae}.callout{border:1px solid #e7dfcf;border-left:3px solid #ca9037;background:#fffdf8;color:#6f5a3b;padding:14px 17px;border-radius:9px;font-size:12px;line-height:1.65;margin-top:17px}.feature-chain{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:20px;border:1px solid var(--line);background:#fff;border-radius:12px}.feature-chain .node{border:1px solid #dbe5ef;border-radius:8px;padding:11px 13px;background:#f9fcff;color:#315371;font-size:11px;font-weight:720}.feature-chain .next{color:#98b2c7}.feature-chain .node.action{background:#e7f2ff;color:#1b65aa;border-color:#d2e7ff}.feature-chain .node.final{background:#e4f6f1;color:#147d69;border-color:#bee7dc}.small-note{font-size:11px;line-height:1.65;color:#718098;margin-top:12px}.small-note b{color:#455c73}.btn{border-radius:9px;background:#1768b8;color:#fff;border:1px solid #1768b8;padding:10px 15px;font-size:12px;font-weight:750;transition:background .15s}.btn:hover{background:#0d569d}.btn.secondary{background:#fff;color:#365777;border-color:#d7e2ed}.btn.secondary:hover{background:#f2f7fc}.btn.ghost{color:#386585;background:transparent;border-color:#d5e1ed}.inlinebtn{border:0;background:none;color:#1768b8;font-size:12px;font-weight:800;padding:2px 0}.inlinebtn:hover{text-decoration:underline}.row{display:flex;align-items:center;gap:11px;flex-wrap:wrap}.split{display:grid;grid-template-columns:1.55fr 1fr;gap:18px}.step-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.step{min-width:0;text-align:left;background:#fff;border:1px solid #dce4ed;border-radius:10px;padding:14px 12px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between;position:relative}.step:hover{border-color:#86badf}.step.active{border:2px solid #297bbd;background:#ecf6ff;padding:13px 11px;box-shadow:0 7px 18px #136bb716}.step .num{display:inline-block;color:#8aa0b5;font-size:10px;font-weight:850;letter-spacing:.07em}.step strong{font-size:11px;line-height:1.4;overflow-wrap:anywhere}.step .sdot{width:17px;height:5px;border-radius:10px;background:#a7bfd2}.step.active .sdot{background:#297bbd}.detail-pane{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;min-height:250px}.detail-pane h3{font-size:19px;margin:9px 0;letter-spacing:-.02em}.detail-pane p{font-size:13px;color:#607089;line-height:1.7;margin:0 0 14px}.detail-pane .label{font-weight:760;color:#244a69;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.refs{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}.ref{display:inline-block;font-size:10px;color:#426586;background:#f0f5fa;border:1px solid #dce7f0;border-radius:6px;font-weight:750;padding:5px 7px}.failstates{display:flex;gap:7px;flex-wrap:wrap}.failstates span{border:1px solid #f0d6d9;background:#fff3f3;color:#9f4854;border-radius:8px;padding:9px 11px;font-size:10px;font-weight:800}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:17px 0}.searchbox{flex:1 1 230px;border:1px solid #d9e2ed;border-radius:10px;background:#fff;padding:12px 13px;color:#2a3b52;font-size:13px;min-width:0}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#fff;border:1px solid #d9e3ed;color:#50677f;border-radius:8px;padding:9px 12px;font-size:11px;font-weight:750}.chip:hover{background:#f7fbff}.chip.active{background:#e8f2fd;border-color:#9fc5e8;color:#1b65ac}.requirements-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.req{background:#fff;border:1px solid #dce5ee;border-radius:11px;overflow:hidden}.req-head{padding:16px;display:flex;align-items:flex-start;gap:11px;text-align:left;border:0;background:transparent;width:100%;color:inherit}.req-head:hover{background:#f9fcff}.req-id{background:#eaf3fd;border-radius:6px;color:#1264ac;font-size:10px;font-weight:840;flex:0 0 auto;padding:6px 7px}.req-body{flex:1;min-width:0}.req-body b{display:block;font-size:13px;margin:1px 0 5px}.req-body span{font-size:11px;line-height:1.55;color:#6d7b8b;display:block}.level-tag{background:#f0f3f7;color:#627083;border-radius:5px;font-size:10px;font-weight:850;padding:5px 7px;flex:0 0 auto}.level-tag.t{background:#e4f5f1;color:#0a796b}.level-tag.a{background:#f0eafa;color:#6b53a1}.req-more{border-top:1px solid #e7edf3;padding:13px 16px 17px;font-size:12px;color:#637187;line-height:1.6;background:#fbfdff}.req-more strong{color:#284762}.req-more a{font-weight:750}.family-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.family-tile{text-align:left;border:1px solid #dce5ef;border-radius:9px;background:#fff;padding:12px}.family-tile:hover{border-color:#9cc7e8}.family-tile.active{background:#edf6ff;border-color:#93c5ea}.family-tile b{display:block;font-size:12px;color:#1d5279}.family-tile span{display:block;font-size:10px;color:#758497;line-height:1.35;margin-top:5px}.level-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.level-card{text-align:left;background:#fff;border:1px solid #dce5ed;border-radius:12px;padding:18px;min-height:162px}.level-card:hover{border-color:#9ac2e4}.level-card.active{border:2px solid #2b78b9;padding:17px;box-shadow:0 7px 20px #2370b811}.bigletter{font-size:28px;font-weight:800;display:block;color:#2c6b9b;line-height:1}.level-card.t .bigletter{color:#16816f}.level-card.a .bigletter{color:#775ab2}.level-card strong{display:block;font-size:13px;margin-top:14px}.level-card p{font-size:11px;color:#728297;line-height:1.5;margin:7px 0 0}.scope-meter{height:13px;background:#e8edf4;border-radius:9px;overflow:hidden;display:flex;margin:18px 0 11px}.scope-meter span{display:block;height:100%;border-right:2px solid #fff}.meter-g{background:#3e89c6}.meter-t{background:#33a292}.meter-a{background:#9781ca}.test-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.test{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid #e1e8f0;border-radius:10px;padding:15px}.test-code{font-size:11px;color:#1869b7;font-weight:850;background:#e9f4fe;border-radius:5px;padding:6px 7px;flex:0 0 auto}.test h3{margin:0 0 5px;font-size:12px}.test p{font-size:11px;color:#708096;line-height:1.5;margin:0}.test .refs{margin-top:8px}.test .ref{padding:3px 5px}.evidence-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.ev-stage{border:1px solid #dae4ed;background:#fff;border-radius:11px;padding:16px}.ev-stage .sequence{font-size:10px;color:#8ca2b5;font-weight:860;letter-spacing:.09em}.ev-stage h3{font-size:13px;margin:12px 0 7px}.ev-stage p{font-size:11px;color:#6b798d;line-height:1.65;margin:0}.ev-stage .cond{color:#11746a;font-weight:820;font-size:10px;margin-top:11px}.ev-stage.a .cond{color:#7255a2}.evidence-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field-card{border:1px solid var(--line);border-radius:10px;background:#fff;padding:17px}.field-card h3{font-size:13px;margin:0 0 10px}.field-card code{display:inline-block;background:#f2f6fa;color:#31536f;font-size:10px;padding:5px 7px;margin:3px;border-radius:6px;word-break:break-word}.distinction{display:grid;grid-template-columns:1fr 1fr;gap:12px}.distinction .card{border-top:3px solid #288f8b}.distinction .card:nth-child(2){border-top-color:#c8864a}.distinction h3{font-size:14px;margin-top:0}.distinction p{line-height:1.7}.footer-note{margin:30px 0 0;border-top:1px solid #dce5ef;padding-top:19px;color:#8592a4;font-size:11px;line-height:1.8}.empty{border:1px dashed #ccd9e5;text-align:center;padding:38px;color:#728196;border-radius:11px;background:#fff}.bullets{margin:11px 0;padding-left:19px;font-size:12px;line-height:1.8;color:#617289} .bullets li{margin:5px 0}.metricbar{display:flex;align-items:center;gap:11px;margin-top:15px}.metricbar .rail{height:9px;border-radius:12px;background:#e9eef3;flex:1;overflow:hidden}.metricbar .fill{height:100%;border-radius:12px;background:#2681c3}.metricbar span{font-size:11px;color:#6b7b8e;white-space:nowrap}.source-tag{font-size:11px;color:#8ba0b4}.toggle-row{display:flex;gap:8px;flex-wrap:wrap}.demo-box{background:#fff;border:1px solid #dce5ee;border-radius:13px;padding:23px}.demo-box .progressline{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 18px}.demo-box .progressline span{height:5px;border-radius:5px;background:#dae5ee}.demo-box .progressline span.done{background:#2996b3}.demo-label{color:#3175a7;font-size:11px;font-weight:820;letter-spacing:.09em}.demo-box h3{font-size:20px;letter-spacing:-.02em;margin:11px 0}.demo-box p{color:#637489;font-size:12px;line-height:1.75;min-height:65px}.demo-box .actionrow{display:flex;gap:8px}.readout{background:#eff5fa;border:1px solid #d8e5ee;border-radius:9px;padding:13px;font-size:11px;color:#54718b;line-height:1.6;margin-top:14px}.readout strong{color:#224e75}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1190px){.content{padding:30px 26px 60px}.topbar{padding:0 26px}.grid3{grid-template-columns:repeat(2,1fr)}.family-legend{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{gap:20px}}
+@media(max-width:900px){.sidebar{flex:0 0 70px;width:70px;padding:16px 8px}.logo{padding:4px 6px 15px}.logo>div:last-child,.nav-label,.nav-btn .nav-text,.nav-dot,.sidebar-foot{display:none}.nav-btn{justify-content:center;padding:14px 5px}.logo-icon{width:40px;height:40px}.hero{grid-template-columns:1fr 1fr}.step-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.evidence-stages{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:660px){.shell{display:block}.sidebar{width:100%;height:auto;min-height:0;position:sticky;z-index:10;padding:8px 12px;flex-direction:row;align-items:center;gap:10px}.logo{border:0;padding:0}.logo-icon{width:35px;height:35px;border-radius:9px;font-size:17px}.nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:thin}.nav-btn{width:auto;min-width:42px;padding:9px 12px}.topbar{height:auto;min-height:50px;padding:10px 17px}.crumb{font-size:10px}.topmeta .pill:not(.blue){display:none}.content{padding:22px 15px 45px}.hero{grid-template-columns:1fr;padding:23px}.hero-diagram{display:none}.stats{grid-template-columns:1fr 1fr;gap:8px}.stat{padding:16px}.stat b{font-size:25px}.grid3,.split,.requirements-list,.test-list,.distinction,.evidence-fields{grid-template-columns:1fr}.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.step{min-height:91px}.family-legend{grid-template-columns:1fr 1fr}.level-grid{grid-template-columns:1fr;gap:8px}.level-card{min-height:0;padding:15px}.level-card.active{padding:14px}.level-card strong{margin-top:8px}.level-card .bigletter{font-size:25px}.evidence-stages{grid-template-columns:1fr 1fr}.feature-chain{padding:13px}.feature-chain .node{padding:8px 9px}.pagehead{margin-bottom:19px}.pagehead h1{font-size:28px}.sectionline h2{font-size:17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Three-dimensional lifecycle explorer */
+.flow-intro{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:17px}.flow-intro .card{border-top:3px solid #2a8eb8}.flow-scene{background:#06172a;border:1px solid #2e5975;border-radius:15px;overflow:hidden;position:relative}.flow-scene x3d-canvas{display:block;width:100%;height:430px}.flow-scene .scene-status{position:absolute;left:12px;bottom:12px;background:#0b203bdc;color:#d8efff;border-radius:7px;padding:7px 10px;font-size:11px;pointer-events:none}.flow-help{color:#d8e9f6;background:#113550;padding:12px 17px;font-size:12px;line-height:1.55}.flow-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:17px 0}.flow-controls input[type=range]{flex:1 1 180px;min-width:160px;accent-color:#1768b8}.flow-controls output{min-width:72px;text-align:right;color:#4b6580;font-size:12px;font-weight:700}.flow-main{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.flow-state-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.flow-stage{border:1px solid #d7e2eb;background:#fff;border-radius:8px;text-align:left;padding:10px;color:#315270;font-size:11px;font-weight:750;min-height:58px}.flow-stage.active{border:2px solid #1768b8;background:#eaf5ff;padding:9px;color:#145c9d}.flow-stage .flow-number{display:block;color:#7c8da1;font-size:10px;margin-bottom:4px}.flow-exceptions{display:flex;gap:7px;flex-wrap:wrap}.flow-exception{border:1px solid #e7bdc2;background:#fff6f6;color:#963e48;border-radius:8px;padding:9px 11px;font-size:11px;font-weight:750}.flow-exception.active{background:#a83846;color:#fff;border-color:#a83846}.flow-detail{min-height:216px}.flow-detail h3{font-size:20px;margin:8px 0}.flow-detail p{font-size:13px;line-height:1.65;color:#607089}.flow-detail .label{font-size:10px;letter-spacing:.12em;font-weight:800;color:#346685;text-transform:uppercase}.flow-detail .refs{margin-top:12px}.flow-status{font-size:11px;color:#6c7f93;line-height:1.6}.flow-no3d{padding:18px;color:#d9ecfa}.flow-key{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.flow-key span{font-size:10px;padding:6px 8px;background:#eef4f8;color:#426581;border-radius:6px}.flow-key .gate{background:#fff1d9;color:#8d641d}.flow-key .exception{background:#fff0f1;color:#a74852}
+@media(max-width:900px){.flow-intro,.flow-main{grid-template-columns:1fr}.flow-state-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:660px){.flow-scene x3d-canvas{height:300px}.flow-controls output{min-width:48px}.flow-stage{min-height:52px}}
+
+/* Inside-the-timeline parameter galleries */
+.flow-scene x3d-canvas{height:560px}.flow-mode,.flow-layers{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:12px 0}.flow-mode button,.flow-layers button{border:1px solid #cbdcea;border-radius:8px;background:#fff;color:#315c7f;padding:8px 11px;font-size:11px;font-weight:750}.flow-mode button.active,.flow-layers button.active{background:#1768b8;border-color:#1768b8;color:#fff}.flow-catalog{margin-top:20px}.flow-object-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;max-height:260px;overflow:auto;padding:2px}.flow-object-grid button{text-align:left;border:1px solid #d8e3ed;background:#fff;border-radius:8px;padding:9px;color:#365a78;font-size:11px;line-height:1.3}.flow-object-grid button.active{border:2px solid #1768b8;background:#eaf5ff;padding:8px}.flow-object-grid button strong{display:block;margin-bottom:3px;color:#174c73}.flow-scene-caption{font-size:11px;color:#647c92;line-height:1.55;margin-top:9px}.flow-view-note{font-size:11px;color:#5a7187}.flow-key .control{background:#e7f4ff;color:#246b9b}.flow-key .field{background:#f0ebfb;color:#6c53a4}.flow-key .test{background:#fff3df;color:#946421}
+@media(max-width:900px){.flow-object-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:660px){.flow-scene x3d-canvas{height:330px}.flow-object-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.flow-turn{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:12px 0}.flow-turn button{border:1px solid #b7d0e2;border-radius:8px;background:#eef7fd;color:#17547c;padding:9px 12px;font-size:11px;font-weight:750}.flow-turn span{font-size:11px;color:#4d6780;font-weight:700;margin-left:auto}
+</style>
+<link rel="icon" href="data:,">
+<script defer src="https://cdn.jsdelivr.net/npm/x_ite@16.5.0/dist/x_ite.min.js" integrity="sha384-zWEqBzUvPfAWJdZmshc1Ku1djM3avxduUwuOTDd9jjvtdxcy8f9eC9PAZyeU3YgO" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+'use strict';
+const ROOT='https://github.com/paulhugel/haio-gats/blob/main/spec/HAIO-GATS-v0.1.0.md';
+const PDF='https://github.com/paulhugel/haio-gats/blob/main/spec/HAIO-GATS-v0.1.0.pdf';
+const sections={HS:'#51-human-supervisory-control',AU:'#52-authority-and-approval',ID:'#53-identity-delegation-and-role-separation',EV:'#54-event-and-provenance-model',CT:'#55-cryptographic-transparency-and-custody',PS:'#56-privacy-security-and-disclosure',RC:'#57-continuity-and-recovery'};
+const families=[['HS','Human supervision','Accountable, effective oversight'],['AU','Authority & approval','Bounded grants and distinct gates'],['ID','Identity & roles','Authentication and separation'],['EV','Events & provenance','Traceable records and claims'],['CT','Transparency & custody','Signed, checkable registration'],['PS','Privacy & security','Controlled disclosure and keys'],['RC','Continuity & recovery','Durable state and reconciliation']];
+const rawRequirements=[
+['HS-01','Supervisor designation','G','Identify exactly one accountable, authenticated Human Supervisor before giving an AI agent authority.'],
+['HS-02','Informed decision','G','Present the action, purpose, resources, authority, outcome, risks, evidence, criteria, and rollback/containment before consequential approval.'],
+['HS-03','Effective control','G','Provide approve, reject, constrain, pause, interrupt, override, reversal where possible, and agent-independent safe halt; declare halt latency bounds.'],
+['HS-04','Live monitoring','G','Show actors, grants, approvals, completed actions, exceptions, failed registrations, consumed scope, and emergency-stop status with bounded delay.'],
+['HS-05','Automation bias','G','Present uncertainty, conflicting evidence, verification state, and limitations to support meaningful supervisory judgment (SHOULD).'],
+['HS-06','Supervisory decisions','G','Record each approval, denial, constraint, override, intervention, and halt as distinct attributed events; deny when required approval is absent.'],
+['AU-01','Authority grant object','G','Specify grant and actor IDs, roles, actions, resources, constraints, effective and expiry terms, required evidence, gates, and prohibitions.'],
+['AU-02','Authenticated binding','G','Bind grants to authenticated actor and operation; fail closed on missing, expired, revoked, ambiguous, or inconsistent authority.'],
+['AU-03','Least authority','G','Keep action and resource scope minimal; read/discovery access must never imply mutation permission.'],
+['AU-04','Distinct approval gates','G','Separate mutation, promotion, publication, destructive action, scope expansion, and residual-risk gates; bind receipts to exact transitions and prevent replay.'],
+['AU-05','Scope drift','G','Stop and obtain a new human decision when the actor, action, resource, risk, or expected effect exceeds the current grant.'],
+['ID-01','Identity binding','G','Authenticate every actor; ensure the claimed actor matches the credential-bound subject. A display name or schema-only match is insufficient.'],
+['ID-02','Bounded delegation','G','Record who delegated to whom, operation, role, grant, time limits, and revocation; never delegate greater authority.'],
+['ID-03','Separation of duties','G','Use distinct executors, verifiers, and promoters for consequential operations (SHOULD); justify and control any overlap.'],
+['ID-04','Honest verification labels','G','Never label a self-check, generated summary, hash, signature, or test run as independent verification; record verifier relationship and examined evidence.'],
+['ID-05','Independent verifier','A','An independent verifier must assess the result and primary evidence against explicit acceptance criteria.'],
+['EV-01','Automatic event capture','G','Record proposals, decisions, invocations, mutations, exceptions, verification, promotions, reversals, recovery, and halts automatically.'],
+['EV-02','Minimum event envelope','G','Every material record contains the required event fields, controlled unknown/not_applicable semantics, and enforceable timestamp validation.'],
+['EV-03','Provenance mapping','G','Represent actors, activities, artifacts, derivation, delegation, and roles in W3C PROV or a documented lossless mapping (SHOULD).'],
+['EV-04','Evidence truth status','G','Classify material claims at least as verified observation, inference, hypothesis, or unknown; append superseding corrections instead of rewriting history.'],
+['EV-05','Linked evidence','G','Bind artifacts and external states to stable IDs and, where appropriate, digests or independently checkable references.'],
+['EV-06','Duplicate handling','G','Give submissions stable IDs; identical replay has at most one effect; conflicting reuse fails closed with an attributed conflict event.'],
+['CT-01','Signed statements','T','Produce authenticated signed statements for consequential events binding issuer, subject, type, and content or digest.'],
+['CT-02','Registration policy','T','Authenticate issuer, enforce registration policy, add accepted statements to a verifiable structure, and issue inclusion receipts.'],
+['CT-03','Reproducible checks','T','Keep the statements, policies, trust anchors, and collateral needed to reproduce registration checks.'],
+['CT-04','Append-only history','T','Preserve accepted statement order; record corrections and revocations as new linked statements rather than silent edits.'],
+['CT-05','Non-equivocation','T','Make consistent-history evidence available to relying parties and declare the verifiable structure and receipt profile.'],
+['CT-06','Independent custody','A','Maintain checkpoints or statements under independently controlled custody; an operator-held head digest alone is insufficient.'],
+['CT-07','Separate proof claims','T','Distinguish signature, identity, policy acceptance, inclusion, consistency, custody, truth, authority, and verification; never conflate them.'],
+['PS-01','Minimize sensitive data','G','Keep only accountability-relevant data; never place secrets, tokens, or unnecessary personal information in signed statement payloads.'],
+['PS-02','Separated views','G','Protect sensitive evidence independently of sanitized disclosure views, retaining stable authorized references.'],
+['PS-03','Accountable evidence access','G','Log sensitive evidence access, policy and trust-anchor administration, and key management with separation of duties.'],
+['PS-04','Compromised key response','T','Document key-compromise detection, notification, revocation, historical interpretation, recovery, and reissuance.'],
+['RC-01','Retention policy','G','Specify retention by event, purpose, obligations, confidentiality, and recovery need; log expiry/deletion without falsifying prior inclusion.'],
+['RC-02','Durable publication','G','Define event-storage atomicity and action-success/event-failure handling; at T/A also cover checkpoint and receipt failures.'],
+['RC-03','Backup and restore','G','Preserve ordering and policies; T/A add statements, receipts, anchors, and key history; A adds independent checkpoints and restore-test evidence.'],
+['RC-04','Recovery reconciliation','A','Require independent reconciliation of recovered state against independently held checkpoints before normal operations resume.']
+];
+const requirements=rawRequirements.map(r=>({id:r[0],title:r[1],level:r[2],desc:r[3],family:r[0].slice(0,2)}));
+const tests=[
+['T-01','Missing supervisor / approval','G','Deny an unapproved consequential action; preserve attributable denial and policy evidence.','HS-01, HS-06, AU-04'],
+['T-02','Outside-grant action','G','Detect scope drift, stop execution, and request a new human decision.','AU-02, AU-05'],
+['T-03','Emergency halt','G','Demonstrate authenticated safe halt within the declared latency; record intervention.','HS-03, HS-06'],
+['T-04','Duplicate / conflicting identifier','G','Identical replay has at most one effect; conflicting reuse fails closed.','EV-06'],
+['T-05','Executor self-check','G','Present executor check as a self-check, not independent verification.','ID-04'],
+['T-06','History tampering / rechain','T','T: receipt/consistency check detects rewriting. A: additionally detect against an independent checkpoint.','CT-04, CT-05; CT-06 at A'],
+['T-07G','Expired or revoked grant','G','Reject invalid grant, credential, or stale authorization policy with a reason.','AU-02'],
+['T-07T','Forged issuer / stale registration policy','T','Fail closed and attribute registration denial.','CT-02'],
+['T-08','Unauthorized disclosure','G','Sanitized public view retains references without exposing secrets or restricted evidence.','PS-01, PS-02'],
+['T-09','Stale backup recovery','A','Detect divergence from independently anchored events; reconcile before resumption.','CT-06, RC-03, RC-04'],
+['T-10','Action succeeds, registration fails','T','Expose inconsistent state; invoke containment or recovery.','RC-02'],
+['T-11','Key rotation / compromise','T','Audit history, revocation point, replacement keys, and notifications.','PS-04'],
+['T-12G','Correct an earlier false claim','G','Append a linked superseding event; keep original.','EV-04'],
+['T-12T','Correct a registered false claim','T','Register a new statement; original and inclusion proof remain detectable.','EV-04, CT-04']
+].map(x=>({id:x[0],title:x[1],level:x[2],desc:x[3],refs:x[4]}));
+const stages=[
+['PROPOSED','A candidate operation exists, not an authorization.','Capture the proposal and make its purpose, risks, and requested effect reviewable.',['EV-01','HS-02']],
+['SCOPED','The operation is bounded to resources, actions, actors, and constraints.','Read/discovery scope does not silently authorize modification.',['AU-01','AU-03']],
+['AUTHORIZED','The applicable authority and human decision permit the specific next transition.','Approval for mutation does not authorize publication or any other distinct gate.',['AU-02','AU-04','HS-06']],
+['EXECUTING','An authenticated executor performs the approved work.','A halt must work without the agent voluntarily cooperating; drift stops work.',['HS-03','AU-05','ID-01']],
+['EVIDENCED','Material effects and supporting records have been captured.','Evidence must identify what happened and link primary artifacts or state.',['EV-01','EV-02','EV-05']],
+['VERIFIED','A named verifier evaluates outcome against criteria.','At G/T a recorded verification need not be independent; at A it must be independent.',['ID-04','ID-05']],
+['PROMOTION-AUTHORIZED','A distinct decision permits promotion or publication.','Prior execution approval cannot be reused to pass this gate.',['AU-04']],
+['PROMOTED','A separately authorized actor changes the promoted or published state.','Promotion has its own attributable event and evidence.',['AU-04','EV-01','ID-03']],
+['REVERIFIED','The resulting promoted state is checked again.','The post-promotion check supports closure; it is not proof of unrecorded facts.',['EV-01','ID-04']],
+['CLOSED','Operation reaches an accountable terminal state.','Preserve records, evidence status, and applicable receipt/custody obligations.',['EV-04','RC-01']]
+];
+const demo=[
+['PROPOSAL','Agent requests a repository modification.','The proposed file, intended change, risk, criteria, and rollback plan are presented.','No authority has been granted simply because the AI proposed work.'],
+['MUTATION GATE','Supervisor considers the exact mutation.','The policy decision point checks actor, grant, scope, and a specific human approval receipt.','If approval is absent, ambiguous, expired, or replayed, deny and record the reason.'],
+['EXECUTION & REVIEW','Executor acts and verifier evaluates evidence.','Changes and evidence are recorded. A separate verifier checks acceptance criteria; self-check is clearly labeled.','Any scope drift, failed log or registration, or emergency stop forces containment.'],
+['PROMOTION GATE','Supervisor considers the distinct publication or merge decision.','Promoter must obtain authorization for this transition; previous mutation approval is not sufficient.','After promotion, the resulting state is reverified and the operation can close.']
+];
+const levels={G:1,T:2,A:3};
+let state={view:'flow',level:'T',family:'all',query:'',expanded:null,stage:0,scenario:0,evidenceMode:'claims',flowStage:0,flowException:null,flowMode:'inside',flowLayer:'all',flowObject:null,flowYaw:0};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+const familyName=id=>families.find(f=>f[0]===id)?.[1]||id;
+const sectionUrl=id=>ROOT+(sections[id.slice(0,2)]||'');
+const cta=(name,label)=>`<button class="btn secondary" data-view="${name}">${label} →</button>`;
+const refsMarkup=ids=>`<div class="refs">${ids.map(x=>`<span class="ref">${esc(x)}</span>`).join('')}</div>`;
+const banner=(title,sub,eyebrow='SPECIFICATION EXPLORER')=>`<div class="pagehead"><div><div class="eyebrow">${eyebrow}</div><h1>${title}</h1><p>${sub}</p></div><a class="linkbtn" href="${PDF}" target="_blank" rel="noopener noreferrer">↗ &nbsp;Authoritative PDF</a></div>`;
+function frame(body){let nav=[['overview','Overview','⌂'],['flow','3D cycle','◉'],['lifecycle','Lifecycle','↝'],['controls','Control library','▦'],['conformance','Conformance','◇'],['evidence','Evidence & trust','◈']];$('app').innerHTML=`<div class="shell"><aside class="sidebar"><div class="logo"><div class="logo-icon">H</div><div><b>HAIO-GATS</b><small>Visual specification explorer</small></div></div><div><div class="nav-label">EXPLORE THE SPEC</div><nav class="nav" aria-label="Primary navigation">${nav.map(([id,label,ic])=>`<button class="nav-btn ${state.view===id?'active':''}" data-view="${id}" aria-label="${label}" aria-current="${state.view===id?'page':'false'}"><span style="font-size:19px;line-height:1;width:21px;text-align:center" aria-hidden="true">${ic}</span><span class="nav-text">${label}</span><span class="nav-dot"></span></button>`).join('')}</nav></div><div class="sidebar-foot"><strong>Research draft · v0.1.0</strong>Educational, read-only interface.<br>Not a conformity certificate or enforcement system.<br><a href="${ROOT}" target="_blank" rel="noopener noreferrer">Inspect source ↗</a></div></aside><main class="main"><header class="topbar"><div class="crumb">REFERENCE / <strong>${nav.find(n=>n[0]===state.view)[1]}</strong></div><div class="topmeta"><span class="pill blue">v0.1.0</span><span class="pill amber">PUBLIC DRAFT</span><span class="pill">READ ONLY</span></div></header><div class="content">${body}<footer class="footer-note">Source: <a href="${ROOT}" target="_blank" rel="noopener noreferrer">HAIO-GATS v0.1.0 Markdown edition</a>. Authored by Paul Garrett Hugel, 16 Sep 2026, CC BY 4.0. The deposited PDF is authoritative if the Markdown and PDF differ. The Markdown also includes a correction-candidate notice. This UI paraphrases and organizes source material for understanding; consult the specification for normative language. No actions, approvals, conformance checks, or evidence registrations are executed by this prototype.</footer></div></main></div>`;}
+function overview(){return `${banner('Governance you can navigate.','A visual map of how HAIO-GATS keeps humans in control of consequential AI actions—and makes the resulting evidence independently checkable.')}<div class="hero"><div><div class="tag">● HUMAN-SUPERVISED AGENTIC OPERATIONS</div><h2>Operational authority is granted, not assumed.</h2><p>HAIO-GATS connects a real human decision to a bounded actor, an attributable action, verified evidence, and (at higher levels) transparent cryptographic registration. A log or a signature alone is never enough.</p></div><div class="hero-diagram"><div class="diagram-frame"><div class="diagram-head">A governed operation at a glance</div><div class="diagram-human">Human Supervisor<br><span style="font-size:10px;font-weight:500">owns approval, intervention, and safe halt</span></div><div class="diagram-arrow">↓</div><div class="diagram-row"><div class="diagram-chip">Authority<br>grant</div><div class="diagram-chip">Policy<br>decision</div><div class="diagram-chip">Approval<br>gate</div></div><div class="diagram-arrow">↓</div><div class="diagram-row"><div class="diagram-chip">Executor</div><div class="diagram-chip">Verifier</div><div class="diagram-chip">Publisher</div></div><div class="diagram-footer">↓ &nbsp; Event evidence &nbsp; → &nbsp; transparency &amp; custody</div></div></div></div><div class="stats"><div class="stat"><b>37</b><span>Normative controls</span><small>7 requirement families</small></div><div class="stat"><b>3</b><span>Cumulative levels</span><small>G → T → A</small></div><div class="stat"><b>10</b><span>Lifecycle stages</span><small>With exceptional exits</small></div><div class="stat"><b>14</b><span>Conformance tests</span><small>Level-dependent evidence</small></div></div><div class="sectionline"><div><h2>Three questions the specification answers</h2><p>Separate operational control from observation and proof.</p></div></div><div class="grid3"><div class="card"><div class="mini-icon">01</div><h3>Who is allowed to act?</h3><p>Exactly one accountable human supervisor, authenticated actors, scoped grants, distinct approval gates, and an independent way to halt.</p><div style="margin-top:16px"><button class="inlinebtn" data-view="controls" data-family="HS">Explore control requirements →</button></div></div><div class="card"><div class="mini-icon teal">02</div><h3>What happened, and when?</h3><p>An explicit state model links proposals, approvals, actions, evidence, verification, and publication without reusing old permissions.</p><div style="margin-top:16px"><button class="inlinebtn" data-view="lifecycle">Walk the lifecycle →</button></div></div><div class="card"><div class="mini-icon purple">03</div><h3>What can be independently checked?</h3><p>Authenticated provenance plus transparent registration, consistent-history proofs, and stronger custody and verification at Level A.</p><div style="margin-top:16px"><button class="inlinebtn" data-view="evidence">Explore evidence layers →</button></div></div></div><div class="sectionline"><div><h2>The accountability chain</h2><p>Each link answers a distinct question. None substitutes for the others.</p></div></div><div class="feature-chain">${['Identity','Authority','Human decision','Action','Primary evidence','Verification','Transparent registration'].map((x,i)=>`${i?'<span class="next">→</span>':''}<span class="node ${i===3?'action':''} ${i===6?'final':''}">${x}</span>`).join('')}</div><div class="callout"><b>Critical distinction:</b> Cryptographic integrity, signatures, and valid inclusion receipts do not establish the accuracy of a claim, the legitimacy of an approval, or independence of verification. The stronger levels add independently checkable properties; they do not make AI actions inherently safe.</div><div class="sectionline"><div><h2>Try a governed operation</h2><p>A simplified, illustrative repository-change scenario—not real approval or execution.</p></div></div><div class="split"><div class="demo-box"><div class="demo-label">EXAMPLE ${state.scenario+1} OF 4</div><div class="progressline">${demo.map((_,i)=>`<span class="${i<=state.scenario?'done':''}"></span>`).join('')}</div><h3>${demo[state.scenario][0]}</h3><p>${demo[state.scenario][1]} ${demo[state.scenario][2]}</p><div class="actionrow"><button class="btn secondary" data-scenario="prev" ${state.scenario===0?'disabled':''}>← Previous</button><button class="btn" data-scenario="next">${state.scenario===3?'Restart example':'Next gate →'}</button></div><div class="readout"><strong>Fail-closed rule:</strong> ${demo[state.scenario][3]}</div></div><div class="card"><div class="eyebrow">WHY IT MATTERS</div><h3 style="font-size:20px">A single “approved” button is not sufficient.</h3><p>Mutation, commit/promotion, publication/deployment, destructive actions, material scope expansion, and residual-risk acceptance require distinct gates. An approval receipt authorizes exactly the specified transition—not every future action.</p><div class="refs"><span class="ref">AU-04</span><span class="ref">HS-02</span><span class="ref">HS-06</span></div><div style="margin-top:19px">${cta('lifecycle','Inspect the complete state model')}</div></div></div>`}
+function lifecycle(){let s=stages[state.stage];return `${banner('The governed operation lifecycle','Ten named stages describe a normal operational path. Every transition identifies its actor, authority, evidence, and human decision; exceptional exits remain available.','OPERATIONAL STATE MODEL · §6')}<div class="sectionline"><div><h2>Click a stage to inspect its meaning</h2><p>Selection reveals a plain-language interpretation and related normative control IDs.</p></div><span class="smallmeta">${state.stage+1} / 10</span></div><div class="step-grid">${stages.map((x,i)=>`<button class="step ${state.stage===i?'active':''}" data-stage="${i}" aria-pressed="${state.stage===i}"><span class="num">${String(i+1).padStart(2,'0')}</span><strong>${x[0].replaceAll('-','-<wbr>')}</strong><span class="sdot"></span></button>`).join('')}</div><div class="sectionline"><div><h2>Selected transition context</h2></div></div><div class="split"><div class="detail-pane"><div class="label">STAGE ${String(state.stage+1).padStart(2,'0')}</div><h3>${s[0]}</h3><p>${s[1]}</p><div class="label">Interpretation / review prompt</div><p style="margin-top:8px">${s[2]}</p>${refsMarkup(s[3])}<div class="row" style="margin-top:20px"><button class="btn secondary" data-stage="${Math.max(0,state.stage-1)}" ${state.stage===0?'disabled':''}>← Previous</button><button class="btn" data-stage="${(state.stage+1)%stages.length}">${state.stage===9?'Return to proposal':'Next stage →'}</button></div></div><div class="card"><div class="eyebrow">GUARDRAILS APPLY THROUGHOUT</div><h3>Every state has an exception path.</h3><p>From any stage, operations must be able to enter one of the following exception states when appropriate:</p><div class="failstates" style="margin-top:16px"><span>PAUSED</span><span>DENIED</span><span>FAILED</span><span>HALTED</span><span>RECOVERY REQUIRED</span></div><div class="callout" style="margin-top:18px">At G/T, “VERIFIED” records a declared verification result; at A, independent verification is additionally required (ID-05).</div></div></div><div class="sectionline"><div><h2>Three approvals that cannot be conflated</h2></div></div><div class="grid3"><div class="card"><span class="mini-icon">1</span><h3>Mutation</h3><p>Does the current actor have permission to perform this exact state-changing action?</p></div><div class="card"><span class="mini-icon teal">2</span><h3>Promotion / publication</h3><p>Has a separate gate authorized commit, merge, deployment, transmission, or release?</p></div><div class="card"><span class="mini-icon purple">3</span><h3>Scope or risk change</h3><p>Has the human approved any material expansion or residual-risk acceptance?</p></div></div><div class="small-note">Normative source: <a href="${ROOT}#6-operational-state-model" target="_blank" rel="noopener noreferrer">§6</a> and <a href="${sectionUrl('AU-04')}" target="_blank" rel="noopener noreferrer">AU-04</a>. Stage descriptions above are explanatory paraphrases, not new normative obligations.</div>`}
+function controls(){const eligible=requirements.filter(r=>levels[r.level]<=levels[state.level]&&(state.family==='all'||r.family===state.family)&&(!state.query||(`${r.id} ${r.title} ${r.desc} ${familyName(r.family)}`).toLowerCase().includes(state.query.toLowerCase())));return `${banner('Explore all 37 controls','Find the control that answers your question. Filter by control family, cumulative conformance level, or requirement ID.','NORMATIVE REQUIREMENTS · §5')}<div class="sectionline"><div><h2>Filter by requirement family</h2><p>The seven families cover the entire v0.1.0 normative-control catalog.</p></div><span class="smallmeta">${eligible.length} visible</span></div><div class="family-legend"><button class="family-tile ${state.family==='all'?'active':''}" data-family="all"><b>ALL</b><span>Entire catalog</span></button>${families.map(f=>`<button class="family-tile ${state.family===f[0]?'active':''}" data-family="${f[0]}"><b>${f[0]} · ${f[1]}</b><span>${requirements.filter(x=>x.family===f[0]).length} controls</span></button>`).join('')}</div><div class="toolbar"><label class="sr-only" for="control-search">Search requirements</label><input class="searchbox" id="control-search" type="search" placeholder="Search ID or text, e.g. AU-04, halt, custody…" value="${esc(state.query)}"><div class="chips" aria-label="Conformance level filter">${[['G','Governed'],['T','Transparent'],['A','Assured']].map(x=>`<button class="chip ${state.level===x[0]?'active':''}" data-level="${x[0]}" aria-pressed="${state.level===x[0]}">${x[0]} · ${x[1]}</button>`).join('')}</div></div><div class="small-note" style="margin:-3px 0 13px">Showing requirements applicable through <b>Level ${state.level}</b> (cumulative). Level G: 27; Level T: 34; Level A: 37. Summaries are paraphrases. Open the source for MUST/SHOULD wording.</div>${eligible.length?`<div class="requirements-list">${eligible.map(r=>`<article class="req"><button class="req-head" data-req="${r.id}" aria-expanded="${state.expanded===r.id}"><span class="req-id">${r.id}</span><span class="req-body"><b>${r.title}</b><span>${r.desc}</span></span><span class="level-tag ${r.level.toLowerCase()}">${r.level}</span></button>${state.expanded===r.id?`<div class="req-more"><strong>Control family:</strong> ${familyName(r.family)}. <strong>Minimum level:</strong> ${r.level}.<br><strong>Interpretive caution:</strong> This card summarizes the intent; inspect the normative specification for the exact conditions and exceptions.<br><a href="${sectionUrl(r.id)}" target="_blank" rel="noopener noreferrer">Read ${r.id} in the source ↗</a></div>`:''}</article>`).join('')}</div>`:'<div class="empty">No controls match the current filters. Try another family, level, or search term.</div>'}`}
+function conformance(){const reqs=requirements.filter(x=>levels[x.level]<=levels[state.level]);const ts=tests.filter(x=>levels[x.level]<=levels[state.level]);const added=state.level==='G'?'Baseline governance controls':state.level==='T'?'Adds CT-01 through CT-05, CT-07, and PS-04':'Adds ID-05, CT-06, and RC-04';return `${banner('Understand the three conformance levels','Conformance is cumulative. Higher levels do not replace the foundational duties and tests below them; every applicable requirement needs evidence.','CONFORMANCE · §§3 & 7')}<div class="level-grid">${[['G','Governed','Human oversight, grants, roles, events, privacy, continuity.'],['T','Transparent','Adds signed statements, transparent receipts, non-equivocation, and key-compromise response.'],['A','Assured','Adds independent verification, custody, and recovery reconciliation.']].map(l=>`<button class="level-card ${l[0].toLowerCase()} ${state.level===l[0]?'active':''}" data-level="${l[0]}" aria-pressed="${state.level===l[0]}"><span class="bigletter">${l[0]}</span><strong>Level ${l[0]} · ${l[1]}</strong><p>${l[2]}</p></button>`).join('')}</div><div class="card" style="margin-top:15px"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">SELECTED REQUIREMENT SCOPE</div><h3 style="font-size:22px;margin:0">Level ${state.level} <span style="font-weight:550;color:#8a98aa">— ${reqs.length} controls</span></h3><p>${added}</p></div><span class="pill blue">${ts.length} required test IDs</span></div><div class="scope-meter" aria-label="27 G controls, 7 additional T controls, 3 additional A controls"><span class="meter-g" style="width:${27/37*100}%"></span><span class="meter-t" style="width:${state.level==='G'?0:7/37*100}%"></span><span class="meter-a" style="width:${state.level==='A'?3/37*100:0}%"></span></div><div class="row"><span class="ref">G baseline · 27</span>${state.level!=='G'?'<span class="ref">T increment · 7</span>':''}${state.level==='A'?'<span class="ref">A increment · 3</span>':''}</div><div class="small-note">This represents <b>required coverage</b>, not tested readiness, measured compliance, or certification. At Level A, test T-06 also gains the independent-custody check (CT-06).</div></div><div class="sectionline"><div><h2>Conformance tests at the selected level</h2><p>Each test has a prescribed challenge and required evidence. These are not executed in this explorer.</p></div><span class="smallmeta">${ts.length} of 14</span></div><div class="test-list">${ts.map(t=>`<article class="test"><span class="test-code">${t.id}</span><div><div class="row" style="justify-content:space-between;align-items:flex-start"><h3>${t.title}</h3><span class="level-tag ${t.level.toLowerCase()}">${t.level}</span></div><p>${t.desc}</p><div class="refs"><span class="ref">${esc(t.refs)}</span></div></div></article>`).join('')}</div><div class="callout"><b>Conformance evidence is not a checkbox:</b> The specification requires requirement-by-requirement evidence for every applicable normative duty, evidence for every test at or below the claimed level, and level-based reasons when reporting higher-level tests as <code>not_applicable</code>.</div>`}
+const fieldGroups=[['Identity & attribution',['event_id','operation_id','event_type','recorded_at','actor_id','actor_type','role','human_supervisor_id']],['Authority & decisions',['authority_grant_id','policy_id','policy_version','action','resource_scope','decision','decision_basis']],['Artifact & evidentiary links',['input_refs','output_refs','truth_status','prior_event_id','verifier_id','supersedes_event_id']],['Transparency & data handling',['statement_id','receipt_ref','confidentiality','retention']]];
+function evidence(){return `${banner('An evidence system—not just an audit log','HAIO-GATS distinguishes actor authenticity, lawful scope, human approval, event provenance, cryptographic registration, and independent review.','EVENTS / PROVENANCE / TRANSPARENCY · §§5.4–5.7')}<div class="sectionline"><div><h2>Eight claims, eight different questions</h2><p>Stronger claims require additional evidence; lower-level proofs must never be relabeled as stronger ones.</p></div></div><div class="evidence-stages">${[['01','Actor identity','Who is this authenticated signer or actor?','G'],['02','Current authority','Was this actor allowed to perform this operation?','G'],['03','Human decision','Was the exact transition authorized?','G'],['04','Action & evidence','What actually changed, with what attributable primary evidence?','G'],['05','Verification','Who evaluated the outcome, against which criteria?','G · A independent'],['06','Signed statement','Was a statement cryptographically bound to issuer and content?','T'],['07','Inclusion & consistency','Was it registered and is the sequence consistent?','T'],['08','Independent custody','Can another custodian anchor/reconcile the history?','A']].map(e=>`<article class="ev-stage ${e[3].startsWith('A')?'a':''}"><div class="sequence">CLAIM ${e[0]}</div><h3>${e[1]}</h3><p>${e[2]}</p><div class="cond">${e[3]==='G'?'Level G':e[3]==='T'?'Level T+':e[3]==='A'?'Level A':'G/T recorded; A independent'}</div></article>`).join('')}</div><div class="sectionline"><div><h2>Every material event carries a minimum envelope</h2><p>25 named fields from EV-02, organized for readability.</p></div><a class="linkbtn" href="${sectionUrl('EV-02')}" target="_blank" rel="noopener noreferrer">↗ EV-02 source</a></div><div class="evidence-fields">${fieldGroups.map(g=>`<section class="field-card"><h3>${g[0]} · ${g[1].length}</h3>${g[1].map(x=>`<code>${x}</code>`).join('')}</section>`).join('')}</div><div class="small-note"><b>Important schema rules:</b> Use <code>unknown</code> when an applicable value cannot be determined; <code>not_applicable</code> is restricted to declared conditions. <code>action</code> and <code>resource_scope</code> may never be <code>not_applicable</code>. At G, <code>statement_id</code> and <code>receipt_ref</code> may be <code>not_applicable</code>. A bare JSON Schema <code>format</code> annotation is not sufficient timestamp validation.</div><div class="sectionline"><div><h2>Evidence status is not the same as cryptographic status</h2></div></div><div class="distinction"><div class="card"><div class="eyebrow" style="color:#0a887b">CLAIM STATUS · EV-04</div><h3>How well is the statement supported?</h3><p>Verified observation, inference, hypothesis, unknown, stale, and superseded help distinguish evidence quality and currency. An earlier claim is corrected with a linked new event, not silently overwritten.</p>${refsMarkup(['verified','inferred','hypothesis','unknown','stale','superseded'])}</div><div class="card"><div class="eyebrow" style="color:#b78036">TRANSPARENCY STATUS · CT-07</div><h3>What does the infrastructure actually prove?</h3><p>A signature, policy acceptance, inclusion receipt, consistency proof, independent checkpoint, and independent verification are separate assertions. No one of them proves that the underlying statement is true.</p>${refsMarkup(['signature','inclusion','consistency','custody','accuracy'])}</div></div><div class="callout"><b>Privacy limitation:</b> Tamper-evident logs can also become surveillance infrastructure. The specification requires minimization, access-controlled restricted evidence, sanitized disclosure views, accountable access, retention rules, and key-compromise procedures at their applicable levels.</div>`}
+function render(){if(state.view!=='flow')stopFlow();const content={overview,flow,lifecycle,controls,conformance,evidence}[state.view]();frame(content);if(state.view==='flow')setupFlowScene()}
+
+const FLOW_X3D=`<X3D profile="Immersive" version="4.0">
+  <Scene>
+    <WorldInfo title="HAIO-GATS illustrative linear lifecycle walkthrough"></WorldInfo>
+    <Background skyColor="0.035 0.09 0.17"></Background>
+    <Viewpoint DEF="TravelerView" description="Inside the straight lifecycle" position="0 1.7 4.5" orientation="0 1 0 0" fieldOfView="1.13" centerOfRotation="0 1.7 -4.5" jump="true" retainUserOffsets="false"></Viewpoint>
+    <Viewpoint DEF="OverviewView" description="Overview of the full start-to-finish route" position="0 78 -36" orientation="1 0 0 -1.42" fieldOfView="1.10" centerOfRotation="0 0 -36" jump="true"></Viewpoint>
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;WALK&quot; &quot;ANY&quot;" headlight="true"></NavigationInfo>
+    <DirectionalLight direction="-0.4 -1 -0.7" intensity="0.8"></DirectionalLight>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.18 0.55 0.76" emissiveColor="0.18 0.55 0.76"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 7.00 -2.70 -1.20 -83.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.18 0.55 0.76" emissiveColor="0.18 0.55 0.76"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="2.70 -1.20 7.00 2.70 -1.20 -83.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 0.00 2.70 -1.20 0.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 0.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch0" description="Select PROPOSED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;01&quot; &quot;PROPOSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -9.00 2.70 -1.20 -9.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -9.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch1" description="Select SCOPED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;02&quot; &quot;SCOPED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -18.00 2.70 -1.20 -18.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -18.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.78 0.50 0.17" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch2" description="Select AUTHORIZED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;03&quot; &quot;AUTHORIZED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -27.00 2.70 -1.20 -27.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -27.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch3" description="Select EXECUTING"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;04&quot; &quot;EXECUTING&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -36.00 2.70 -1.20 -36.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -36.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch4" description="Select EVIDENCED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;05&quot; &quot;EVIDENCED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -45.00 2.70 -1.20 -45.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -45.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch5" description="Select VERIFIED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;06&quot; &quot;VERIFIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -54.00 2.70 -1.20 -54.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -54.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.78 0.50 0.17" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch6" description="Select PROMOTION-AUTHORIZED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;07&quot; &quot;PROMOTION-AUTHORIZED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -63.00 2.70 -1.20 -63.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -63.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch7" description="Select PROMOTED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;08&quot; &quot;PROMOTED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -72.00 2.70 -1.20 -72.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -72.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch8" description="Select REVERIFIED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;09&quot; &quot;REVERIFIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor="0.25 0.47 0.65" emissiveColor="0.25 0.47 0.65"></Material>
+      </Appearance>
+      <IndexedLineSet coordIndex="0 1 -1">
+        <Coordinate point="-2.70 -1.20 -81.00 2.70 -1.20 -81.00"></Coordinate>
+      </IndexedLineSet>
+    </Shape>
+    <Transform translation="0.00 3.80 -81.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.10 0.47 0.70" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="3.15 1.35 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="StageTouch9" description="Select CLOSED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;10&quot; &quot;CLOSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.35" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform DEF="TimelineMarker" translation="0 5.0 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.97 0.76 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Sphere radius="0.24"></Sphere>
+      </Shape>
+    </Transform>
+    <Switch DEF="ControlGallery" whichChoice="0">
+      <Group>
+        <Transform translation="-4.80 1.70 1.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch0" description="Inspect HS-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-01&quot; &quot;Supervisor&quot; &quot;designation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -1.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch1" description="Inspect HS-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-02&quot; &quot;Informed decision&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -3.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch2" description="Inspect HS-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-03&quot; &quot;Effective control&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -5.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch3" description="Inspect HS-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-04&quot; &quot;Live monitoring&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -7.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch4" description="Inspect HS-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-05&quot; &quot;Automation bias&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -10.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch5" description="Inspect HS-06"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;HS-06&quot; &quot;Supervisory&quot; &quot;decisions&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -12.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch6" description="Inspect AU-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;AU-01&quot; &quot;Authority grant&quot; &quot;object&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -14.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch7" description="Inspect AU-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;AU-02&quot; &quot;Authenticated&quot; &quot;binding&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -16.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch8" description="Inspect AU-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;AU-03&quot; &quot;Least authority&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -18.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch9" description="Inspect AU-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;AU-04&quot; &quot;Distinct approval&quot; &quot;gates&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -21.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch10" description="Inspect AU-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;AU-05&quot; &quot;Scope drift&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -23.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch11" description="Inspect ID-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;ID-01&quot; &quot;Identity binding&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -25.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch12" description="Inspect ID-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;ID-02&quot; &quot;Bounded delegation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -27.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch13" description="Inspect ID-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;ID-03&quot; &quot;Separation of&quot; &quot;duties&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -29.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch14" description="Inspect ID-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;ID-04&quot; &quot;Honest&quot; &quot;verification&quot; &quot;labels&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -32.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch15" description="Inspect ID-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;ID-05&quot; &quot;Independent&quot; &quot;verifier&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -34.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch16" description="Inspect EV-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-01&quot; &quot;Automatic event&quot; &quot;capture&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -36.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch17" description="Inspect EV-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-02&quot; &quot;Minimum event&quot; &quot;envelope&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -38.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch18" description="Inspect EV-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-03&quot; &quot;Provenance mapping&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -40.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch19" description="Inspect EV-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-04&quot; &quot;Evidence truth&quot; &quot;status&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -43.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch20" description="Inspect EV-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-05&quot; &quot;Linked evidence&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -45.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch21" description="Inspect EV-06"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;EV-06&quot; &quot;Duplicate handling&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -47.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch22" description="Inspect CT-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-01&quot; &quot;Signed statements&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -49.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch23" description="Inspect CT-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-02&quot; &quot;Registration&quot; &quot;policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -51.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch24" description="Inspect CT-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-03&quot; &quot;Reproducible&quot; &quot;checks&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -54.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch25" description="Inspect CT-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-04&quot; &quot;Append-only&quot; &quot;history&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -56.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch26" description="Inspect CT-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-05&quot; &quot;Non-equivocation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -58.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch27" description="Inspect CT-06"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-06&quot; &quot;Independent&quot; &quot;custody&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -60.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch28" description="Inspect CT-07"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;CT-07&quot; &quot;Separate proof&quot; &quot;claims&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -62.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch29" description="Inspect PS-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;PS-01&quot; &quot;Minimize sensitive&quot; &quot;data&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -65.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch30" description="Inspect PS-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;PS-02&quot; &quot;Separated views&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -67.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch31" description="Inspect PS-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;PS-03&quot; &quot;Accountable&quot; &quot;evidence access&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -69.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch32" description="Inspect PS-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;PS-04&quot; &quot;Compromised key&quot; &quot;response&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -71.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch33" description="Inspect RC-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;RC-01&quot; &quot;Retention policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -73.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch34" description="Inspect RC-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;RC-02&quot; &quot;Durable&quot; &quot;publication&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -76.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch35" description="Inspect RC-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;RC-03&quot; &quot;Backup and restore&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-4.80 1.70 -78.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.16 0.54 0.77" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="ControlTouch36" description="Inspect RC-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;RC-04&quot; &quot;Recovery&quot; &quot;reconciliation&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Switch DEF="FieldGallery" whichChoice="0">
+      <Group>
+        <Transform translation="4.80 1.70 1.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch0" description="Inspect event_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;event_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -2.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch1" description="Inspect operation_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;operation_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -5.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch2" description="Inspect event_type"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;event_type&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -8.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch3" description="Inspect recorded_at"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;recorded_at&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -12.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch4" description="Inspect actor_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;actor_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -15.50">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch5" description="Inspect actor_type"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;actor_type&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -18.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch6" description="Inspect role"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;role&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -22.10">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch7" description="Inspect human_supervisor_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;human_supervisor_i&quot; &quot;d&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -25.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch8" description="Inspect authority_grant_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;authority_grant_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -28.70">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch9" description="Inspect policy_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;policy_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -32.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch10" description="Inspect policy_version"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;policy_version&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -35.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch11" description="Inspect action"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;action&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -38.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch12" description="Inspect resource_scope"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;resource_scope&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -41.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch13" description="Inspect decision"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;decision&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -45.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch14" description="Inspect decision_basis"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;decision_basis&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -48.50">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch15" description="Inspect input_refs"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;input_refs&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -51.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch16" description="Inspect output_refs"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;output_refs&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -55.10">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch17" description="Inspect truth_status"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;truth_status&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -58.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch18" description="Inspect prior_event_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;prior_event_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -61.70">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch19" description="Inspect verifier_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;verifier_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -65.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch20" description="Inspect supersedes_event_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;supersedes_event_i&quot; &quot;d&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -68.30">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch21" description="Inspect statement_id"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;statement_id&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -71.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch22" description="Inspect receipt_ref"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;receipt_ref&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -74.90">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch23" description="Inspect confidentiality"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;confidentiality&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="4.80 1.70 -78.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.53 0.37 0.75" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.15 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="FieldTouch24" description="Inspect retention"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;retention&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Switch DEF="TestGallery" whichChoice="0">
+      <Group>
+        <Transform translation="7.20 3.40 0.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch0" description="Inspect T-01"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-01&quot; &quot;Missing supervisor&quot; &quot;/ approval&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -5.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch1" description="Inspect T-02"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-02&quot; &quot;Outside-grant&quot; &quot;action&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -11.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch2" description="Inspect T-03"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-03&quot; &quot;Emergency halt&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -17.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch3" description="Inspect T-04"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-04&quot; &quot;Duplicate /&quot; &quot;conflicting&quot; &quot;identifier&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -23.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch4" description="Inspect T-05"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-05&quot; &quot;Executor&quot; &quot;self-check&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -29.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch5" description="Inspect T-06"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-06&quot; &quot;History tampering&quot; &quot;/ rechain&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -34.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch6" description="Inspect T-07G"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-07G&quot; &quot;Expired or revoked&quot; &quot;grant&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -40.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch7" description="Inspect T-07T"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-07T&quot; &quot;Forged issuer /&quot; &quot;stale registration&quot; &quot;policy&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -46.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch8" description="Inspect T-08"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-08&quot; &quot;Unauthorized&quot; &quot;disclosure&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -52.20">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch9" description="Inspect T-09"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-09&quot; &quot;Stale backup&quot; &quot;recovery&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -58.00">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch10" description="Inspect T-10"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-10&quot; &quot;Action succeeds,&quot; &quot;registration fails&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -63.80">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch11" description="Inspect T-11"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-11&quot; &quot;Key rotation /&quot; &quot;compromise&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="7.20 3.40 -69.60">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch12" description="Inspect T-12G"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-12G&quot; &quot;Correct an earlier&quot; &quot;false claim&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+        <Transform translation="-7.20 3.40 -75.40">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.80 0.57 0.21" emissiveColor="0.04 0.06 0.09"></Material>
+            </Appearance>
+            <Box size="2.30 1.04 0.52"></Box>
+          </Shape>
+          <TouchSensor DEF="TestTouch13" description="Inspect T-12T"></TouchSensor>
+          <Transform translation="0 0 0.28">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+              </Appearance>
+              <Text string="&quot;T-12T&quot; &quot;Correct a&quot; &quot;registered false&quot; &quot;claim&quot;">
+                <FontStyle family="&quot;SANS&quot;" size="0.25" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Group>
+    </Switch>
+    <Transform translation="8.20 -0.30 -9.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="2.45 1.05 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch0" description="Inspect PAUSED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;PAUSED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="-8.20 -0.30 -27.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="2.45 1.05 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch1" description="Inspect DENIED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;DENIED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="8.20 -0.30 -45.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="2.45 1.05 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch2" description="Inspect FAILED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;FAILED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="-8.20 -0.30 -63.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="2.45 1.05 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch3" description="Inspect HALTED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;HALTED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation="8.20 -0.30 -81.00">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.59 0.20 0.25" emissiveColor="0.04 0.06 0.09"></Material>
+        </Appearance>
+        <Box size="2.45 1.05 0.52"></Box>
+      </Shape>
+      <TouchSensor DEF="ExceptionTouch4" description="Inspect RECOVERY REQUIRED"></TouchSensor>
+      <Transform translation="0 0 0.28">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.98 0.99 1" emissiveColor="0.98 0.99 1"></Material>
+          </Appearance>
+          <Text string="&quot;RECOVERY REQUIRED&quot;">
+            <FontStyle family="&quot;SANS&quot;" size="0.27" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" spacing="1.12"></FontStyle>
+          </Text>
+        </Shape>
+      </Transform>
+    </Transform>
+  </Scene>
+</X3D>`;
+const flowExceptions=[
+  ['PAUSED','Work is held while a human examines uncertainty or a changed condition.','No later gate is inferred from the pause. Resumption needs the applicable authority and evidence.',['HS-03','AU-05']],
+  ['DENIED','The requested transition did not receive valid authority.','Record the reason and decision. A new proposal or grant must be assessed separately.',['HS-06','AU-02']],
+  ['FAILED','The action or required evidence step failed.','Show the partial result and invoke the declared containment or recovery policy.',['EV-01','RC-02']],
+  ['HALTED','The Human Supervisor invokes an agent-independent safe halt.','Show the accepted halt request, observed safe state, and attributed intervention.',['HS-03','HS-06']],
+  ['RECOVERY REQUIRED','Normal operation cannot continue until state and evidence are reconciled.','At Level A, independently held checkpoints are part of recovery reconciliation. No automatic return to the normal path is implied.',['RC-03','RC-04']]
+];
+const flowPositions=Array.from({length:10},(_,i)=>[0,5,-9*i]);
+function flowObjectPosition(kind,index){if(kind==='control')return [-4.8,1.7,1-index*2.2];if(kind==='field')return [4.8,1.7,1-index*3.3];return [index%2?-7.2:7.2,3.4,-index*5.8]}
+function flowCamera(z,yaw=state.flowYaw,y=1.7){if(!flowScene||!window.X3D||state.flowMode!=='inside')return;const camera=flowScene.getNamedNode('TravelerView');camera.position=new X3D.SFVec3f(0,y,z);camera.orientation=new X3D.SFRotation(0,1,0,-yaw);camera.set_bind=true}
+let flowScene=null,flowPlaying=false,flowLast=0,flowElapsed=0,flowRaf=0;
+function flow(){const d=flowDetailData();return `${banner('Walk the complete process','Travel from start to finish. Select a labeled 3D object to inspect a control, event field, or conformance test.','ILLUSTRATIVE X3D LIFECYCLE · PDF §§5–7')}<div class="flow-intro"><div class="card"><h3>You are inside the process</h3><p>The camera starts before <b>PROPOSED</b>, facing the complete straight route. Press Play to move forward past the labeled blocks, or step and scrub to a state. The gold marker identifies the selected state.</p></div><div class="card"><h3>76 labeled parameter objects</h3><p>Explore <b>37 controls</b>, <b>25 event fields</b>, and <b>14 conformance tests</b> as selectable geometry. Side-lane position is for browsing only; it does not mean a parameter applies only at that stage.</p></div></div><div class="flow-mode" aria-label="Camera view"><button data-flow-mode="inside" class="${state.flowMode==='inside'?'active':''}" aria-pressed="${state.flowMode==='inside'}">Inside the process</button><button data-flow-mode="overview" class="${state.flowMode==='overview'?'active':''}" aria-pressed="${state.flowMode==='overview'}">Full overview</button><span class="flow-view-note">Play moves the inside viewpoint forward; step and scrub jump to a stage.</span></div><div class="flow-layers" aria-label="Parameter gallery"><strong style="font-size:11px;margin-right:3px">Show geometry:</strong>${[['control','Controls · 37'],['field','Event fields · 25'],['test','Tests · 14'],['all','All · 76']].map(([id,name])=>`<button data-flow-layer="${id}" class="${state.flowLayer===id?'active':''}" aria-pressed="${state.flowLayer===id}">${name}</button>`).join('')}</div><div class="flow-turn" aria-label="Look along the process route"><button data-flow-turn="left" aria-label="Turn 45 degrees left">↶ Turn left</button><button data-flow-turn="reset" aria-label="Face forward">Face forward</button><button data-flow-turn="right" aria-label="Turn 45 degrees right">Turn right ↷</button><span id="flow-bearing" aria-live="polite">Facing forward · 0°</span></div><div class="flow-scene"><x3d-canvas id="flow-canvas" contentScale="auto" update="auto" aria-label="Immersive straight timeline with labeled blocks ahead and on both sides">${FLOW_X3D}<p class="flow-no3d">3D needs WebGL and X_ITE. The complete text catalog below remains available.</p></x3d-canvas><div class="scene-status" id="scene-status" role="status">Loading 3D scene…</div><div class="flow-help">Look left or right, then press Play to pass the blocks. Select a labeled block to inspect it. The text controls below support keyboard navigation.</div></div><div class="flow-key"><span>Blue: normal stages</span><span class="gate">Gold: approval gates</span><span class="exception">Red: exceptions</span><span class="control">Cyan: control blocks</span><span class="field">Violet: event fields</span><span class="test">Gold blocks: conformance tests</span></div><p class="flow-scene-caption">Normal states span a straight start-to-finish route. Controls, event fields, tests, and exceptions stand beside it as navigational illustrations. Their positions do not state when a requirement applies, whether a field is present in a deployment, or whether a test has passed.</p><div class="flow-controls" aria-label="Illustrative time navigation"><button class="btn secondary" data-flow-action="previous" aria-label="Previous state">← Previous</button><button class="btn" id="flow-play" data-flow-action="play" aria-label="Play timeline">Play</button><button class="btn secondary" data-flow-action="next" aria-label="Next state">Next →</button><label for="flow-scrub" class="sr-only">Select lifecycle state</label><input id="flow-scrub" type="range" min="0" max="9" step="1" value="${state.flowStage}" aria-valuetext="${stages[state.flowStage][0]}"><output id="flow-count" for="flow-scrub">${state.flowStage+1} / 10</output></div><div class="flow-main"><div><div class="sectionline"><div><h2>Normal sequence</h2><p>Select a state directly. A new cycle requires a new proposal and applicable authority.</p></div></div><div class="flow-state-list" id="flow-state-list">${stages.map((v,i)=>`<button class="flow-stage ${i===state.flowStage&&state.flowException===null&&!state.flowObject?'active':''}" data-flow-stage="${i}" aria-pressed="${i===state.flowStage&&state.flowException===null&&!state.flowObject}"><span class="flow-number">${String(i+1).padStart(2,'0')}</span>${esc(v[0])}</button>`).join('')}</div><div class="sectionline"><div><h2>Exception routes</h2><p>Any normal state can branch here.</p></div></div><div class="flow-exceptions" id="flow-exceptions">${flowExceptions.map((v,i)=>`<button class="flow-exception ${state.flowException===i?'active':''}" data-flow-exception="${i}" aria-pressed="${state.flowException===i}">${esc(v[0])}</button>`).join('')}</div><p class="flow-status">The PDF names these exception states without prescribing one universal return route. A later transition needs its own authority and evidence.</p></div><section class="card flow-detail" aria-live="polite"><div class="label" id="flow-detail-label">${esc(d.label)}</div><h3 id="flow-detail-title">${esc(d.title)}</h3><p id="flow-detail-meaning">${esc(d.meaning)}</p><div class="label">What to check</div><p id="flow-detail-prompt">${esc(d.prompt)}</p><div id="flow-detail-refs">${refsMarkup(d.refs)}</div><a class="linkbtn" href="${PDF}" target="_blank" rel="noopener noreferrer" style="margin-top:17px">Read authoritative PDF ↗</a></section></div><div class="flow-catalog"><div class="sectionline"><div><h2>Find a parameter by name</h2><p>The text catalog selects the same 3D objects without requiring pointer precision.</p></div><span class="smallmeta" id="flow-catalog-count">${flowCatalogItems().length} visible</span></div><div class="flow-object-grid" id="flow-object-grid">${flowCatalogMarkup()}</div></div><div class="callout"><b>Learning model only:</b> Geometry, playback, and labels neither execute actions nor prove authority, evidence, test success, or HAIO-GATS conformance. The deposited PDF governs if a summary differs.</div>`}
+const flowFields=fieldGroups.flatMap(([group,names])=>names.map(name=>({name,group})));
+function flowCatalogItems(){const kinds=state.flowLayer==='all'?['control','field','test']:[state.flowLayer];return kinds.flatMap(kind=>{const items=kind==='control'?requirements:kind==='field'?flowFields:tests;return items.map((item,index)=>({kind,index,item}))})}
+function flowCatalogMarkup(){return flowCatalogItems().map(({kind,index,item})=>{const key=kind+':'+index;const id=kind==='field'?item.name:item.id;const title=kind==='field'?item.group:item.title;return `<button data-flow-object="${key}" class="${state.flowObject===key?'active':''}" aria-pressed="${state.flowObject===key}"><strong>${esc(id)}</strong>${esc(title)}</button>`}).join('')}
+function flowDetailData(){if(state.flowObject){const [kind,indexText]=state.flowObject.split(':');const index=Number(indexText);if(kind==='control'){const item=requirements[index];return {label:'CONTROL · MINIMUM LEVEL '+item.level,title:item.id+' · '+item.title,meaning:item.desc,prompt:'This labeled geometry is a requirement summary. Read the authoritative PDF for exact wording and conditions.',refs:[item.id]}}if(kind==='field'){const item=flowFields[index];return {label:'EV-02 EVENT FIELD · '+item.group,title:item.name,meaning:'A named field in the minimum material-event envelope.',prompt:'Field availability and unknown/not_applicable rules depend on the PDF conditions. This object holds no live event value.',refs:['EV-02']}}const item=tests[index];return {label:'CONFORMANCE TEST · MINIMUM LEVEL '+item.level,title:item.id+' · '+item.title,meaning:item.desc,prompt:'This object describes a prescribed challenge and required evidence. It does not run the test.',refs:[item.refs]}}const item=state.flowException===null?stages[state.flowStage]:flowExceptions[state.flowException];return {label:state.flowException===null?'STAGE '+(state.flowStage+1)+' OF 10':'EXCEPTION FROM STAGE '+(state.flowStage+1),title:item[0],meaning:item[1],prompt:item[2],refs:item[3]}}
+function flowSelectObject(kind,index){stopFlow();state.flowObject=kind+':'+index;state.flowException=null;const p=flowObjectPosition(kind,index);state.flowYaw=Math.atan2(p[0],2.8);updateFlow()}
+function flowSetMode(mode){state.flowMode=mode;updateFlow()}
+function flowSetLayer(layer){state.flowLayer=layer;state.flowObject=null;state.flowYaw=0;updateFlow()}
+function stopFlow(){flowPlaying=false;cancelAnimationFrame(flowRaf);flowElapsed=0;const b=$('flow-play');if(b){b.textContent='Play';b.setAttribute('aria-label','Play timeline')}}
+function flowSelectStage(i,fromPlay=false){state.flowStage=Math.max(0,Math.min(9,i));state.flowException=null;state.flowObject=null;state.flowYaw=0;if(!fromPlay)stopFlow();updateFlow()}
+function flowSelectException(i){stopFlow();state.flowException=i;state.flowObject=null;state.flowYaw=(i%2?-1:1)*Math.atan2(8.2,2.8);updateFlow()}
+function flowTurn(direction){stopFlow();state.flowObject=null;state.flowException=null;if(direction==='reset')state.flowYaw=0;else state.flowYaw=(state.flowYaw+(direction==='right'?1:-1)*Math.PI/4+2*Math.PI)%(2*Math.PI);updateFlow()}
+function updateFlow(){if(state.view!=='flow')return;const d=flowDetailData();$('flow-detail-label').textContent=d.label;$('flow-detail-title').textContent=d.title;$('flow-detail-meaning').textContent=d.meaning;$('flow-detail-prompt').textContent=d.prompt;$('flow-detail-refs').innerHTML=refsMarkup(d.refs);$('flow-scrub').value=state.flowStage;$('flow-scrub').setAttribute('aria-valuetext',stages[state.flowStage][0]);$('flow-count').textContent=(state.flowStage+1)+' / 10';$('flow-bearing').textContent='Heading '+Math.round(state.flowYaw*180/Math.PI)+'° · '+(state.flowObject?'inspecting '+d.title:state.flowException!==null?'exception '+d.title:'stage '+(state.flowStage+1)+' of 10');document.querySelectorAll('[data-flow-stage]').forEach(b=>{const active=Number(b.dataset.flowStage)===state.flowStage&&state.flowException===null&&!state.flowObject;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});document.querySelectorAll('[data-flow-exception]').forEach(b=>{const active=Number(b.dataset.flowException)===state.flowException;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});document.querySelectorAll('[data-flow-mode]').forEach(b=>{const active=b.dataset.flowMode===state.flowMode;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});document.querySelectorAll('[data-flow-layer]').forEach(b=>{const active=b.dataset.flowLayer===state.flowLayer;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});$('flow-object-grid').innerHTML=flowCatalogMarkup();$('flow-catalog-count').textContent=flowCatalogItems().length+' visible';$('scene-status').textContent=state.flowObject?'Inspecting '+d.title:state.flowException!==null?'Viewing '+d.title:flowPlaying?'Traveling through the timeline':'At '+stages[state.flowStage][0]+' · press Play to move forward';if(flowScene&&window.X3D){try{const p=flowPositions[state.flowStage];flowScene.getNamedNode('TimelineMarker').translation=new X3D.SFVec3f(...p);for(const kind of ['control','field','test'])flowScene.getNamedNode(kind[0].toUpperCase()+kind.slice(1)+'Gallery').whichChoice=(state.flowLayer==='all'||state.flowLayer===kind)?0:-1;const selected=state.flowObject?state.flowObject.split(':'):null;const objectPos=selected?flowObjectPosition(selected[0],Number(selected[1])):null;const exceptionZ=state.flowException===null?null:-9*(state.flowException*2+1);const z=objectPos?objectPos[2]+2.8:exceptionZ!==null?exceptionZ+2.8:p[2]+4.5;flowCamera(z,state.flowYaw,objectPos&&selected[0]==='test'?2.1:1.7);if(state.flowMode==='overview')flowScene.getNamedNode('OverviewView').set_bind=true}catch(e){$('scene-status').textContent='3D navigation unavailable; text controls remain active.'}}}
+function flowTick(now){if(!flowPlaying)return;if(flowLast){flowElapsed+=Math.min(now-flowLast,100);if(flowElapsed>=2200){flowElapsed-=2200;if(state.flowStage===9){flowCamera(flowPositions[9][2]-4.5,0);stopFlow();$('scene-status').textContent='Route complete · CLOSED passed';return}flowSelectStage(state.flowStage+1,true)}const nextZ=flowPositions[state.flowStage][2]+4.5-9*flowElapsed/2200;flowCamera(nextZ,0)}flowLast=now;flowRaf=requestAnimationFrame(flowTick)}
+function flowPlay(){if(flowPlaying){stopFlow();return}if(state.flowStage===9)flowSelectStage(0);state.flowException=null;state.flowObject=null;updateFlow();flowPlaying=true;flowLast=0;flowElapsed=0;$('flow-play').textContent='Pause';$('flow-play').setAttribute('aria-label','Pause timeline');flowRaf=requestAnimationFrame(flowTick)}
+function setupFlowScene(){flowScene=null;const canvas=$('flow-canvas');if(!canvas)return;function bind(){if(!canvas.isConnected)return;try{const sc=canvas.browser.currentScene;sc.getNamedNode('TimelineMarker');sc.getNamedNode('TravelerView');flowScene=sc;for(let i=0;i<10;i++)sc.getNamedNode('StageTouch'+i).addFieldCallback('flow-stage-'+i,'touchTime',()=>flowSelectStage(i));for(let i=0;i<5;i++)sc.getNamedNode('ExceptionTouch'+i).addFieldCallback('flow-exception-'+i,'touchTime',()=>flowSelectException(i));for(const [kind,count] of [['control',37],['field',25],['test',14]])for(let i=0;i<count;i++)sc.getNamedNode(kind[0].toUpperCase()+kind.slice(1)+'Touch'+i).addFieldCallback('flow-'+kind+'-'+i,'touchTime',()=>flowSelectObject(kind,i));$('scene-status').textContent='Inside the linear process · press Play to move forward';updateFlow()}catch(e){if(canvas.isConnected)$('scene-status').textContent='3D unavailable; the complete text catalog remains below.'}}canvas.addEventListener('load',bind);canvas.addEventListener('error',()=>{$('scene-status').textContent='3D scene failed to load; use the text catalog below.'});setTimeout(bind,1200)}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.flowTurn){flowTurn(b.dataset.flowTurn);return}if(b.dataset.flowStage!==undefined){flowSelectStage(Number(b.dataset.flowStage));return}if(b.dataset.flowException!==undefined){flowSelectException(Number(b.dataset.flowException));return}if(b.dataset.flowObject){const [kind,index]=b.dataset.flowObject.split(':');flowSelectObject(kind,Number(index));return}if(b.dataset.flowMode){flowSetMode(b.dataset.flowMode);return}if(b.dataset.flowLayer){flowSetLayer(b.dataset.flowLayer);return}if(b.dataset.flowAction){if(b.dataset.flowAction==='play')flowPlay();else flowSelectStage(state.flowStage+(b.dataset.flowAction==='next'?1:-1))}});
+document.addEventListener('input',e=>{if(e.target.id==='flow-scrub')flowSelectStage(Number(e.target.value))});
+
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.view){state.view=b.dataset.view;if(b.dataset.family)state.family=b.dataset.family;state.expanded=null;render();window.scrollTo({top:0,behavior:'instant'});return}if(b.dataset.family){state.family=b.dataset.family;state.expanded=null;render();return}if(b.dataset.level){state.level=b.dataset.level;state.expanded=null;render();return}if(b.dataset.req){state.expanded=state.expanded===b.dataset.req?null:b.dataset.req;render();return}if(b.dataset.stage!==undefined){state.stage=+b.dataset.stage;render();return}if(b.dataset.scenario){state.scenario=b.dataset.scenario==='next'?(state.scenario+1)%4:Math.max(0,state.scenario-1);render();return}});
+document.addEventListener('input',e=>{if(e.target.id==='control-search'){const pos=e.target.selectionStart;state.query=e.target.value;render();let el=$('control-search');if(el){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}}});
+// This client-side prototype deliberately has no network requests, persistence, or mutation endpoint.
+render();
+</script>
+</body>
+</html>
