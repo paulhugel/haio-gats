@@ -108,7 +108,12 @@
         { "$ref": "#/$defs/unknownMarker" }
       ]
     },
-    "policy_id": { "$ref": "#/$defs/identifier" },
+    "policy_id": {
+      "oneOf": [
+        { "$ref": "#/$defs/identifier" },
+        { "$ref": "#/$defs/unknownMarker" }
+      ]
+    },
     "policy_version": { "type": "string", "minLength": 1 },
     "action": {
       "oneOf": [
