@@ -11,6 +11,7 @@ transparency, independent custody, recovery, and conformance evidence.
 
 - Published specification: version 0.1.0, public draft.
 - DOI: [10.5281/zenodo.22800642](https://doi.org/10.5281/zenodo.22800642).
+- Bibliography correction proposal: [v0.1.0 errata](spec/ERRATA-v0.1.0.md); the deposited PDF remains unchanged and authoritative.
 - Repository status: public preview; GitHub Issues enabled, with issue creation limited to collaborators and public reading available; Discussions disabled.
 - Implementation status: no conforming reference implementation is claimed.
 - Review status: independent design and publication review pending.
